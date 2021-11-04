@@ -1,4 +1,4 @@
-# Bootiful - A clean, bare, modern Bootstrap 5.1.3 theme
+# Bootiful - Open-source, bare, modern Bootstrap v5 theme
 
 
 

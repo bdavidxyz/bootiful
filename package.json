@@ -30,7 +30,7 @@
     "gulp-purgecss": "^4.0.3",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
+    "gulp-terser": "^2.1.0"
   },
   "dependencies": {}
 }

@@ -5,15 +5,14 @@ const sass = require('gulp-sass');
 const htmlmin = require('gulp-htmlmin');
 const purgecss = require('gulp-purgecss')
 const cssmin = require('gulp-cssmin');
-const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const jsImport = require('gulp-js-import');
+const terser = require('gulp-terser');
 const sourcemaps = require('gulp-sourcemaps');
 const htmlPartial = require('gulp-html-partial');
 const clean = require('gulp-clean');
 const isProd = process.env.NODE_ENV === 'prod';
-
 const htmlFile = [
     'src/*.html'
 ]
@@ -49,7 +48,7 @@ function js() {
             hideConsole: true
         }))
         .pipe(concat('all.js'))
-        .pipe(gulpIf(isProd, uglify()))
+        .pipe(gulpIf(isProd, terser()))
         .pipe(gulp.dest('docs/js'));
 }
 
