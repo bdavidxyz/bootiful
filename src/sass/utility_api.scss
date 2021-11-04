@@ -1,0 +1,58 @@
+// See https://getbootstrap.com/docs/5.1/utilities/api/
+$utilities: (
+
+  // will underline text
+  "highlight": (
+    class: "highlight",
+    property: "background",
+    values: (
+      "hero": linear-gradient(360deg, #b7edfa 24%, transparent 0),
+    )
+  ),
+
+  "fontweight": (
+    class: "fw",
+    property: "font-weight",
+    values: (
+      300: 300,
+      400: 400,
+      500: 500,
+      600: 600,
+      700: 700,
+      800: 800,
+      900: 900,
+    )
+  ),
+
+  "small-font-size": (
+    class: "fs",
+    property: "font-size",
+    values: (
+      'small': $small-font-size,
+      'base09': $font-size-base * 0.9,
+      'base08': $font-size-base * 0.8,
+      'base07': $font-size-base * 0.7,
+      'base06': $font-size-base * 0.6,
+      'base05': $font-size-base * 0.5,
+      'base04': $font-size-base * 0.4,
+      'base03': $font-size-base * 0.3,
+      'base02': $font-size-base * 0.2,
+      'base01': $font-size-base * 0.1,
+    )
+  ),
+
+  "max-width-pixel": (
+    class: "mwp",
+    property: "max-width",
+    values: (
+      100: '100px',
+      150: '150px',
+      200: '200px',
+      250: '250px',
+      300: '300px',
+      350: '350px',
+      400: '400px',
+    )
+  ),
+
+);

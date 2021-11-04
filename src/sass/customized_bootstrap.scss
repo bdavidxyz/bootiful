@@ -1,0 +1,167 @@
+/** 
+* Bootstrap settings. It will overrides
+* any bootstrap variable defined in bootstrap/scss/_variables.scss
+*/
+$enable-negative-margins: true;
+
+$primary: #0d58c9;
+
+
+$card-border-radius: 13px;
+$card-border-color: rgb(230, 236, 241);
+$box-shadow: 0 3px 20px 0 rgba(116, 129, 141, .12);
+
+$display-font-sizes: (
+  1: 5.5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 2.5rem,
+  6: 2rem
+);
+$display-font-weight: 700;
+$headings-font-weight: 700;
+
+$secondary: #89898e;
+$success: #31bc60;
+$info: #88b3f0;
+$warning: #df7800;
+$danger: #e34f2f;
+$light: #fbfbfc;
+$dark: #1e2029;
+
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+
+$lead-font-size: 1.4rem;
+$lead-font-weight: 400;
+$btn-font-weight: 500;
+
+$btn-hover-bg-shade-amount: 60%;
+$btn-hover-bg-tint-amount: 60%;
+
+$form-label-font-size: 0.875rem;
+$form-label-font-weight: 500;
+$form-label-color: #12141d;
+
+$transition-fade:             opacity .5s linear;
+
+$transition-collapse:         height .95s ease;
+$transition-collapse-width:   width .95s ease;
+
+/**
+ *  import the necessary Bootstrap files 
+ */
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "./utility_api";
+@import "./utility_custom";
+
+
+/** 
+* Overrides an existing Bootstrap class
+* 
+*   Sometimes it is not possible to customise bootstrap,
+*   unless you modify the source code.
+*   Instead, just redefine class as below is just cleaner,
+*   and it ensure you can upgrade Bootstrap's version at any time.
+*/
+html {
+  .btn {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 1px 1px 0 rgb(116 129 141 / 12%), 0 0 0 1px rgb(116 129 141 / 16%), 0 0 0 0 transparent, 0 0 0 0 transparent, 0 2px 5px 0 rgb(116 129 141 / 16%);
+  }
+
+  .btn-primary {
+    transition: transform .2s, background .3s, box-shadow .3s, color .3s;
+  }
+
+}
+
+// Override any Bootstrap props linked to the public website (landing page, faq, etc)
+.site {
+  .nav-link {
+    color: $gray-900;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.profile {
+
+  .btn-secondarynav {
+      border: none;
+      position: relative;
+      display: inline-block;
+      color: $gray-600;
+      &:hover {
+        color: $gray-600;
+        background-color: #e9e9e9;
+      }
+  }
+  .btn-secondarynav.active {
+      color: $black;
+      &:hover {
+        color: $black;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 0;
+        left: 8px;
+        right: 8px;
+        bottom: -6px;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #000;
+      }
+  }
+
+}
+
+
+
+// Override any Bootstrap props linked to the admin dashboard (all pages under the /admin URL)
+.admin {
+
+  nav a {
+    span {
+      color: $gray-500;
+    }
+
+    svg {
+      fill: $gray-500;
+      transition: fill 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+  }
+
+  nav a:hover {
+    span {
+      color: $white;
+    }
+
+    svg {
+      fill: $white;
+      transition: fill 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+  }
+
+  .table > tbody {
+    border-top: (1 * $table-border-width) solid $table-group-separator-color;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+}
+
+/** 
+* Overrides defaults (from Bootstrap or not)
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}

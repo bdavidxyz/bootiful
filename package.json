@@ -28,9 +28,10 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-js-import": "^1.0.6",
     "gulp-purgecss": "^4.0.3",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-terser": "^2.1.0"
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.43.4"
   },
   "dependencies": {}
 }

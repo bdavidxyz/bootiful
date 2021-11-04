@@ -1,13 +1,4 @@
-$theme-colors: (
-    "primary": blue,
-    "dark": #000000
-);
-
+@import './customized_bootstrap.scss';
 @import "node_modules/bootstrap/scss/bootstrap";
 
-.footer {
-    margin-top:3rem;
-}
-.navbar {
-    border-bottom:1px solid #eee;
-}
+
