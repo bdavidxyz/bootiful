@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
-const gulpCopy = require('gulp-copy');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const htmlmin = require('gulp-htmlmin');
