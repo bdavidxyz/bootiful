@@ -15,7 +15,6 @@
     "prod": "cross-env NODE_ENV=prod gulp"
   },
   "devDependencies": {
-    "bootstrap": "5.0.0-beta3",
     "browser-sync": "^2.26.3",
     "cross-env": "^7.0.2",
     "gulp": "^4.0.2",
