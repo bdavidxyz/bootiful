@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
+const gulpCopy = require('gulp-copy');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const htmlmin = require('gulp-htmlmin');
@@ -85,9 +86,15 @@ function del() {
         .pipe(clean());
 }
 
+function copy() {
+    return gulp.src('./CNAME')
+           .pipe(gulp.dest('./docs/'));
+}
+
 exports.css = css;
+exports.copy = copy;
 exports.html = html;
 exports.js = js;
 exports.del = del;
 exports.serve = gulp.parallel(html, css, js, img, watchFiles, serve);
-exports.default = gulp.series(del, html, css, js, img);
+exports.default = gulp.series(del, copy, html, css, js, img);
