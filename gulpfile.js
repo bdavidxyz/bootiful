@@ -61,7 +61,12 @@ function img() {
 function serve() {
     browserSync.init({
         open: true,
-        server: './docs'
+        server: {
+            baseDir: "docs",
+            serveStaticOptions: {
+                extensions: ['html']
+            }
+        }
     });
 }
 
