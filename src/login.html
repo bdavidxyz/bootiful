@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <partial src="head.html"></partial>
+  </head>
+
+  <body class="site bg-light">
+
+    <header>
+      <partial src="header_auth.html"></partial>
+    </header>
+
+    <main>
+      <partial src="pages/login.html"></partial>
+    </main>
+
+    <footer>
+      <partial src="footer_small.html"></partial>  
+    </footer>
+  
+    <script src="./js/all.js"></script>    
+    <script>
+      if (bootiful.urlParam('email') === '' || bootiful.urlParam('password') === '') {
+        bootiful.displayToasts()
+      } 
+      if (bootiful.urlParam('email') === '') {
+        document.getElementById('email').value = ' '
+        document.getElementById('email').classList.add("is-invalid")
+      } 
+      if (bootiful.urlParam('password') === '') {
+        document.getElementById('password').value = ' '
+        document.getElementById('password').classList.add("is-invalid")
+      } 
+    </script>
+  </body>
+</html>
