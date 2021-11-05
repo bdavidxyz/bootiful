@@ -20,18 +20,7 @@
     </footer>
   
     <script src="./js/all.js"></script>    
-    <script>
-      if (bootiful.urlParam('email') === '' || bootiful.urlParam('password') === '') {
-        bootiful.displayToasts()
-      } 
-      if (bootiful.urlParam('email') === '') {
-        document.getElementById('email').value = ' '
-        document.getElementById('email').classList.add("is-invalid")
-      } 
-      if (bootiful.urlParam('password') === '') {
-        document.getElementById('password').value = ' '
-        document.getElementById('password').classList.add("is-invalid")
-      } 
-    </script>
+    <partial src="pages/login_js.html"></partial>  
   </body>
+
 </html>

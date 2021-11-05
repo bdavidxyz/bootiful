@@ -1,0 +1,17 @@
+<script>
+  if (bootiful.urlParam('email') === '' || bootiful.urlParam('password') === '') {
+    bootiful.displayToasts()
+    if (bootiful.urlParam('email') === '') {
+      document.getElementById('email').value = ' '
+      document.getElementById('email').classList.add("is-invalid")
+    }
+    if (bootiful.urlParam('password') === '') {
+      document.getElementById('password').value = ' '
+      document.getElementById('password').classList.add("is-invalid")
+    }
+  } else {
+    if (bootiful.urlParam('commit') === 'Continue') {
+      window.location.href = '/admin?successful_login=true'
+    }
+  }
+</script>
