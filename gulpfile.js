@@ -36,7 +36,7 @@ function css() {
         }).on('error', sass.logError))
         .pipe(gulpIf(!isProd, sourcemaps.write()))
         .pipe(gulpIf(isProd, purgecss({
-            content: ['src/**/*.html']
+            content: ['src/**/*.html', 'src/**/*.js']
         })))
         .pipe(gulpIf(isProd, cssmin()))
         .pipe(gulp.dest('docs/css/'));
