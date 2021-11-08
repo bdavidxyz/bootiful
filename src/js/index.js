@@ -20,12 +20,16 @@ bootiful.urlParam = function (name) {
 };
 
 
-bootiful.displayToasts = function () {
-  let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+bootiful.displayToasts = function (which) {
+  let selector = '.toast'
+  if (which) {
+    selector += '.' + which
+  } 
+  let toastElList = [].slice.call(document.querySelectorAll(selector))
   let toastList = toastElList.map(function (toastEl) {
     return new bootstrap.Toast(toastEl)
   })
   toastList.forEach( function(element, index) {
     element.show()
-  })
+  })    
 }
