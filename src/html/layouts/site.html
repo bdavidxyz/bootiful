@@ -17,9 +17,7 @@
 </head>
 <body class="{{ page_name }} site {% if page_name in auth_pages %}bg-light{% endif %}">
 
-  {% if page_name in auth_pages %}
-    {% include "partials/header_auth.html" %}
-  {% else %}
+  {% if not page_name in auth_pages %}
     {% include "partials/header.html" %}
   {% endif %}
 
