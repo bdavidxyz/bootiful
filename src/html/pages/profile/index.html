@@ -1,0 +1,40 @@
+{% set page_name = 'Profile' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %} 
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %} 
+
+{% extends "layouts/profile.html" %} 
+
+{% block content %}
+<div class="container py-3">
+  <div class="d-flex flex-row justify-content-between align-items-center mb-4">
+    <h3 class="mb-2 mb-lg-0 fw-bold">Account</h3>
+  </div>
+  <div class="mb-5 p-4 card">
+    <h5>Jane Doe</h5>
+    <p class="fs-small text-muted mb-1">janedoe@example.com</p>
+    <p class="fs-small text-muted mb-4">Joined on <span>Jan. 27, 2021, 7:04 p.m.</span></p>
+    <div class="mb-3 d-flex flex-row">
+      <a class="btn bg-white btn-sm me-2" href="/settings/account/change-email/">Change email</a>
+      <form class="" action="" method="post">
+        <button type="submit" class="btn bg-white btn-sm">Reset password</button>
+      </form>
+    </div>
+  </div>
+  <div class="mb-5 p-4 card">
+    <form method="get" action="/profile">
+      <fieldset class="mt-2">
+        <legend class="h6 fw-600">Personal Information</legend>
+        <div id="div_id_name" class="mb-3 pt-2">
+          <label for="id_name" class="form-label requiredField">
+            Display Name<span class="asteriskField">&nbsp;*</span>
+          </label>
+          <input type="text" name="name" value="Jane Doe" maxlength="254" class="textinput textInput form-control" required="" id="id_name">
+        </div>
+      </fieldset>
+      <div class="buttonHolder mt-3">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary btn btn-dark btn-sm" id="submit-id-submit">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
