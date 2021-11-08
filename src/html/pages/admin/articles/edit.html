@@ -180,3 +180,12 @@
   </div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    document.querySelector('.js-edit-title').innerHTML += ' ' + bootiful.urlParam('name')
+    document.querySelector('#id_name').value = bootiful.urlParam('name')
+  });
+</script>
+{% endblock %}
