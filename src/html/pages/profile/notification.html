@@ -1,0 +1,57 @@
+{% set page_name = 'Notification' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %} 
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %} 
+
+{% extends "layouts/profile.html" %} 
+
+{% block content %}
+<div class="container py-3">
+  <div class="d-flex flex-row justify-content-between align-items-center mb-4">
+    <h3 class="mb-2 mb-lg-0 fw-bold">Notification Settings</h3>
+  </div>
+  <div class="mb-5 p-4 card">
+    <form method="post">
+      <fieldset>
+        <legend class="h6 fw-600 mb-3">Marketing Communications</legend>
+        <div class="mb-3">
+          <div id="div_id_accepted_marketing_emails" class="mb-2">
+            <input type="checkbox" name="accepted_marketing_emails" class="checkboxinput form-check-input" id="id_accepted_marketing_emails">
+            <label for="id_accepted_marketing_emails" class="ms-1 form-check-label fs-small text-muted">
+              Subscribe to newsletter (four times a month)
+            </label>
+          </div>
+          <div id="div_id_accepted_marketing_emails" class="mb-2">
+            <input type="checkbox" name="accepted_marketing_emails" class="checkboxinput form-check-input" id="id_accepted_marketing_emails">
+            <label for="id_accepted_marketing_emails" class="ms-1 form-check-label fs-small text-muted">
+              Subscribe to Ruby-on-Rails courses
+            </label>
+          </div>
+          <div id="div_id_accepted_marketing_emails" class="mb-3">
+            <input type="checkbox" name="accepted_marketing_emails" class="checkboxinput form-check-input" id="id_accepted_marketing_emails">
+            <label for="id_accepted_marketing_emails" class="ms-1 form-check-label fs-small text-muted">
+              I accept to be contacted for surveys
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="h6 fw-600 mt-4  mb-3">Email Reports</legend>
+        <div id="div_id_reporting_frequency" class="mb-3">
+          <label for="id_reporting_frequency" class="form-label requiredField">
+            How often should we send you an email report ? <span class="asteriskField">*</span>
+          </label>
+          <select name="reporting_frequency" class="select form-select" id="id_reporting_frequency">
+            <option value="weekly" selected="">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+            <option value="never">Never</option>
+          </select>
+        </div>
+      </fieldset>
+      <div class="buttonHolder">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary btn btn-dark btn-sm" id="submit-id-submit">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

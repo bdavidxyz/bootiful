@@ -33,4 +33,14 @@
       </div>
     </div>
   </nav>
+  <div class="secondarynav bg-light mb-3 flex-center border-bottom" style="min-height: 48px">
+    <div class="container py-1">
+      <div class="d-flex flex-row flex-wrap">
+        <a class="btn btn-secondarynav shadow-none {% if page_name == 'Profile' %}active{% endif %}" href="/profile">Account</a>
+        <a class="btn btn-secondarynav shadow-none {% if page_name == 'Notification' %}active{% endif %}" href="/profile/notification">Notifications</a>
+        <a class="btn btn-secondarynav shadow-none {% if page_name == 'Danger' %}active{% endif %}" href="/profile/delete">Danger Zone</a>
+        <a class="btn btn-secondarynav shadow-none " href="/profile/billing">Billing</a>
+      </div>
+    </div>
+  </div>
 </header>
