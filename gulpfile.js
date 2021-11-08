@@ -31,7 +31,7 @@ const beautify = require('gulp-beautify')
 // }
 
 function html() {
-    return gulp.src('src/html/pages/*.+(html|njk)')
+    return gulp.src('src/html/pages/**/*.+(html|njk)')
         .pipe(
             njk({
                 path: ['src/html'],
