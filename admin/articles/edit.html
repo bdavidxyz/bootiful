@@ -139,7 +139,7 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-12 col-lg-5 justify-content-start align-items-start mb-lg-2">
-                        <h3 class="mb-2 mb-lg-0 fw-bold truncate">Edit article</h3>
+                        <h3 class="mb-2 mb-lg-0 fw-bold truncate js-edit-title">Edit article</h3>
                     </div>
                     <div class="col-12 col-lg-auto flex-1 ms-auto justify-content-center align-items-end mb-lg-2">
                         <div class="d-flex flex-row w-100 h-100 justify-content-start justify-content-lg-end align-items-center flex-wrap">
@@ -305,6 +305,12 @@
         </div>
     </div>
     <script src="/js/all.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelector('.js-edit-title').innerHTML += ' ' + bootiful.urlParam('name')
+            document.querySelector('#id_name').value = bootiful.urlParam('name')
+        });
+    </script>
 </body>
 
 </html>
