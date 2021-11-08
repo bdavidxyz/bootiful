@@ -1,15 +1,93 @@
-<!DOCTYPE html><html><head><title>Bootiful | Open-Source, bare, modern Bootstrap v5 template</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjFweCIgaGVpZ2h0PSI1NXB4IiB2aWV3Qm94PSIwIDAgNjEgNTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8ZyBpZD0icnVieXNoYXBlMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxLjAwMDAwMCwgLTIzLjAwMDAwMCkiIGZpbGw9IiMxRTIwMjkiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwMDAwIj4KICAgICAgPHBvbHlnb24gaWQ9InJhaWxzbGlrZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuNTAwMDAwLCA1MS4wMDAwMDApIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC01MS41MDAwMDAsIC01MS4wMDAwMDApICIgcG9pbnRzPSI1MS41IDI0IDgxIDYxLjY4MzU3MzQgNjkuNzMyMDAyNyA3OCAzMy4yNjc5OTczIDc4IDIyIDYxLjY4MzU3MzQiPjwvcG9seWdvbj4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo="><link rel="stylesheet" href="./css/style.css"></head><body class="site bg-light"><header><div class="container pt-5 flex-center flex-column"><div class="toast position-absolute align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true"><div class="d-flex"><div class="toast-body">⚠ There were error on form</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div><a class="navbar-brand me-3" href="/"><svg width="160px" height="60px" viewBox="0 0 272 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="rubyshape" transform="translate(1.000000, -7.000000)" fill="#000000"><text id="Bootiful" font-family="Jost-SemiBold, Jost" font-size="48" font-weight="500" line-spacing="69" letter-spacing="1.80000007"><tspan x="94" y="51">Bootiful</tspan></text><polygon id="railslike" stroke="#000000" fill-rule="nonzero" transform="translate(29.000000, 34.500000) rotate(-180.000000) translate(-29.000000, -34.500000) " points="29 8 58 44.9857295 46.9229857 61 11.0770143 61 0 44.9857295"></polygon></g></g></svg></a></div></header><main><div class="container pb-5 flex-center flex-column" style="min-height: 70vh"><div class="col-12 col-md-8 col-lg-5 p-4 p-md-5 card"><h4 class="mb-4">Sign in to your account</h4><div><form action="/login" accept-charset="UTF-8" method="get"><div class="position-relative"><label class="form-label" for="email">Email *</label> <input class="form-control" type="text" name="email" id="email"><div class="invalid-feedback mt-0 position-absolute">Please provide an email</div></div><div class="mt-4"><label class="form-label" for="password">Password *</label> <input class="form-control" type="password" name="password" id="password"><div class="invalid-feedback mt-0 position-absolute">Please provide a password</div></div><div class="mt-4"><input type="submit" name="commit" value="Continue" class="mt-4 btn btn-dark w-100" data-disable-with="Continue"></div></form><div class="d-flex mt-3"><small class="text-muted text-center w-100"><a class="fw-bold" href="">Forgot your password ?</a></small></div></div></div><small class="text-muted text-center w-100"><p class="text-muted text-sm mt-3">Don't have an account yet ? <a class="fw-bold" href="/signup">Sign up</a></p></small></div></main><footer><div class="d-flex flex-row justify-content-center align-items-center px-3 py-2 flex-wrap text-muted small text-sm my-4"><div class="mx-2">© 2021 Bootiful</div><a href="/" class="mx-2 fw-normal text-muted">Home </a>| <a href="" class="mx-2 fw-normal text-muted">Impressum </a>| <a href="" class="mx-2 fw-normal text-muted">Terms </a>| <a href="" class="mx-2 fw-normal text-muted">Privacy</a></div></footer><script src="./js/all.js"></script><script>if (bootiful.urlParam('email') === '' || bootiful.urlParam('password') === '') {
-                bootiful.displayToasts()
-                if (bootiful.urlParam('email') === '') {
-                  document.getElementById('email').value = ' '
-                  document.getElementById('email').classList.add("is-invalid")
-                }
-                if (bootiful.urlParam('password') === '') {
-                  document.getElementById('password').value = ' '
-                  document.getElementById('password').classList.add("is-invalid")
-                }
-              } else {
-                if (bootiful.urlParam('commit') === 'Continue') {
-                  window.location.href = '/admin?successful_login=true'
-                }
-              }</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjFweCIgaGVpZ2h0PSI1NXB4IiB2aWV3Qm94PSIwIDAgNjEgNTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8ZyBpZD0icnVieXNoYXBlMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxLjAwMDAwMCwgLTIzLjAwMDAwMCkiIGZpbGw9IiMxRTIwMjkiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwMDAwIj4KICAgICAgPHBvbHlnb24gaWQ9InJhaWxzbGlrZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuNTAwMDAwLCA1MS4wMDAwMDApIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC01MS41MDAwMDAsIC01MS4wMDAwMDApICIgcG9pbnRzPSI1MS41IDI0IDgxIDYxLjY4MzU3MzQgNjkuNzMyMDAyNyA3OCAzMy4yNjc5OTczIDc4IDIyIDYxLjY4MzU3MzQiPjwvcG9seWdvbj4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Bootiful | Login</title>
+    <meta name="keywords" content="Bootstrap, SCSS, Gulp, JavaScript">
+    <meta name="description" content="A free and open-source Bootstrap v5 template">
+    <meta name="og:title" content="Bootiful Login">
+    <meta name="og:description" content="A free and open-source Bootstrap v5 template">
+</head>
+
+<body class="Login site bg-light">
+    <header class="container pt-5 pb-3 flex-center flex-column">
+        <div class="toast position-absolute align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"> ⚠ There were error on form </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+        <a class="navbar-brand me-3" href="/">
+            <svg width="160px" height="60px" viewBox="0 0 272 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="rubyshape" transform="translate(1.000000, -7.000000)" fill="#000000"> <text id="Bootiful" font-family="Jost-SemiBold, Jost" font-size="48" font-weight="500" line-spacing="69" letter-spacing="1.80000007">
+                            <tspan x="94" y="51">Bootiful</tspan>
+                        </text>
+                        <polygon id="railslike" stroke="#000000" fill-rule="nonzero" transform="translate(29.000000, 34.500000) rotate(-180.000000) translate(-29.000000, -34.500000) " points="29 8 58 44.9857295 46.9229857 61 11.0770143 61 0 44.9857295"></polygon>
+                    </g>
+                </g>
+            </svg>
+        </a>
+    </header>
+    <div class="main">
+        <div class="container pb-5 flex-center flex-column" style="min-height: 70vh">
+            <div class="col-12 col-md-8 col-lg-5 p-4 p-md-5 card">
+                <h4 class="mb-4">Sign in to your account</h4>
+                <div>
+                    <form action="/login" accept-charset="UTF-8" method="get">
+                        <div class="position-relative">
+                            <label class="form-label" for="email">Email * <small class="text-muted">(Demo: empty value fails, any value works)</small></label>
+                            <input class="form-control" type="text" name="email" id="email">
+                            <div class="invalid-feedback mt-0 position-absolute">Please provide an email</div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="form-label" for="password">Password *</label>
+                            <input class="form-control" type="password" name="password" id="password">
+                            <div class="invalid-feedback mt-0 position-absolute">Please provide a password</div>
+                        </div>
+                        <div class="mt-4">
+                            <input type="submit" name="commit" value="Continue" class="mt-4 btn btn-dark w-100" data-disable-with="Continue">
+                        </div>
+                    </form>
+                    <div class="d-flex mt-3">
+                        <small class="text-muted text-center w-100">
+                            <a class="fw-bold" href="">Forgot your password ?</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <small class="text-muted text-center w-100">
+                <p class="text-muted text-sm mt-3">Don't have an account yet ? <a class="fw-bold" href="/signup">Sign up</a></p>
+            </small>
+        </div>
+    </div>
+    <footer class="d-flex flex-row justify-content-center align-items-center px-3 py-2 flex-wrap text-muted small text-sm my-4">
+        <div class="mx-2">© 2021 Bootiful</div>
+        <a href="/" class="mx-2 fw-normal text-muted"> Home </a> | <a href="" class="mx-2 fw-normal text-muted"> Impressum </a> | <a href="" class="mx-2 fw-normal text-muted"> Terms </a> | <a href="" class="mx-2 fw-normal text-muted"> Privacy </a>
+    </footer>
+    <script src="./js/all.js"></script>
+    <script>
+        if (bootiful.urlParam('email') === '' || bootiful.urlParam('password') === '') {
+            bootiful.displayToasts()
+            if (bootiful.urlParam('email') === '') {
+                document.getElementById('email').value = ' '
+                document.getElementById('email').classList.add("is-invalid")
+            }
+            if (bootiful.urlParam('password') === '') {
+                document.getElementById('password').value = ' '
+                document.getElementById('password').classList.add("is-invalid")
+            }
+        } else {
+            if (bootiful.urlParam('commit') === 'Continue') {
+                window.location.href = '/admin?successful_login=true'
+            }
+        }
+    </script>
+</body>
+
+</html>
