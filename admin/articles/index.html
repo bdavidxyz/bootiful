@@ -145,6 +145,18 @@
                                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                         </div>
+                        <div class="toast js-edit-success position-absolute align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body"> Article successfully updated. </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="toast js-edit-failure position-absolute align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body"> Article edition cancelled. </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
                         <h3 class="mb-2 mb-lg-0 fw-bold truncate">List of articles</h3>
                     </div>
                     <div class="col-12 col-lg-auto flex-1 ms-auto justify-content-center align-items-end mb-lg-2">
@@ -442,7 +454,7 @@
                                             </svg>
                                             <span class="text-sm ms-2">Show</span>
                                         </button>
-                                        <a href="/admin/articles/edit?nameRose=" type="button" class="d-flex justify-content-center align-items-center btn btn-sm ms-1">
+                                        <a href="/admin/articles/edit?name=Rose" type="button" class="d-flex justify-content-center align-items-center btn btn-sm ms-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
                                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
@@ -574,6 +586,12 @@
                     bootiful.displayToasts('js-deletion')
                 }
             });
+            if (bootiful.urlParam('submit')) {
+                bootiful.displayToasts('js-edit-success')
+            }
+            if (bootiful.urlParam('cancelled')) {
+                bootiful.displayToasts('js-edit-failure')
+            }
         });
     </script>
 </body>
