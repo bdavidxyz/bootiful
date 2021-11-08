@@ -16,16 +16,29 @@ const isProd = process.env.NODE_ENV === 'prod';
 const htmlFile = [
     'src/*.html'
 ]
+const njk = require('gulp-nunjucks-render')
+const beautify = require('gulp-beautify')
+
+// function html() {
+//     return gulp.src(htmlFile)
+//         .pipe(htmlPartial({
+//             basePath: 'src/partials/'
+//         }))
+//         .pipe(gulpIf(isProd, htmlmin({
+//             collapseWhitespace: true
+//         })))
+//         .pipe(gulp.dest('docs'));
+// }
 
 function html() {
-    return gulp.src(htmlFile)
-        .pipe(htmlPartial({
-            basePath: 'src/partials/'
-        }))
-        .pipe(gulpIf(isProd, htmlmin({
-            collapseWhitespace: true
-        })))
-        .pipe(gulp.dest('docs'));
+    return gulp.src('src/html/pages/*.+(html|njk)')
+        .pipe(
+            njk({
+                path: ['src/html'],
+            })
+        )
+        .pipe(beautify.html({ indent_size: 4, preserve_newlines: false }))
+        .pipe(gulp.dest('docs'))
 }
 
 function css() {

@@ -1,3 +1,10 @@
+{% set page_name = 'Home' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %} 
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %} 
+
+{% extends "layouts/site.html" %} 
+
+{% block content %}
 <div class="container" style="max-width: 1140px;">
   <div id="hero" style="min-height:50vh" class="bg-white text-dark flex-center">
     <div class="container">
@@ -19,7 +26,7 @@
           </div>
           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center w-100">
             <a class="btn btn-lg btn-dark text-white flex-center mx-auto mx-lg-2 mb-2 w-100" href="#" style="max-width:280px">
-              View on Github
+              Star on Github
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="28" height="28" fill="currentColor" class="ml-1">
                 <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
               </svg>
@@ -286,8 +293,6 @@
       </div>
     </div>
   </div>
-
-  <partial src="../bottom_cta.html"></partial>  
-
-
+  {% include "partials/bottom_cta.html" %}
 </div>
+{% endblock %}

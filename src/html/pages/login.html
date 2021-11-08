@@ -1,0 +1,58 @@
+{% set page_name = 'Login' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %} 
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %} 
+
+{% extends "layouts/site.html" %} 
+
+{% block content %}
+<div class="container pb-5 flex-center flex-column" style="min-height: 70vh">
+  <div class="col-12 col-md-8 col-lg-5 p-4 p-md-5 card">
+    <h4 class="mb-4">Sign in to your account</h4>
+    <div>
+      <form action="/login" accept-charset="UTF-8" method="get">
+        <div class="position-relative">
+          <label class="form-label" for="email">Email * <small class="text-muted">(Demo: empty value fails, any value works)</small></label>
+          <input class="form-control" type="text" name="email" id="email">
+          <div class="invalid-feedback mt-0 position-absolute">Please provide an email</div>          
+        </div>
+        <div class="mt-4">
+          <label class="form-label" for="password">Password *</label>
+          <input class="form-control" type="password" name="password" id="password">
+          <div class="invalid-feedback mt-0 position-absolute">Please provide a password</div>          
+        </div>
+        <div class="mt-4">
+          <input type="submit" name="commit" value="Continue" class="mt-4 btn btn-dark w-100" data-disable-with="Continue">
+        </div>
+      </form>
+      <div class="d-flex mt-3">
+        <small class="text-muted text-center w-100">
+          <a class="fw-bold" href="">Forgot your password ?</a>
+        </small>
+      </div>
+    </div>
+  </div>
+  <small class="text-muted text-center w-100">
+    <p class="text-muted text-sm mt-3">Don't have an account yet ? <a class="fw-bold" href="/signup">Sign up</a></p>
+  </small>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    if (bootiful.urlParam('email') === '' || bootiful.urlParam('password') === '') {
+        bootiful.displayToasts()
+        if (bootiful.urlParam('email') === '') {
+          document.getElementById('email').value = ' '
+          document.getElementById('email').classList.add("is-invalid")
+        }
+        if (bootiful.urlParam('password') === '') {
+          document.getElementById('password').value = ' '
+          document.getElementById('password').classList.add("is-invalid")
+        }
+      } else {
+        if (bootiful.urlParam('commit') === 'Continue') {
+          window.location.href = '/admin?successful_login=true'
+        }
+      }
+</script>
+{% endblock %}
