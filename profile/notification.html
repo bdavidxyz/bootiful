@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjFweCIgaGVpZ2h0PSI1NXB4IiB2aWV3Qm94PSIwIDAgNjEgNTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8ZyBpZD0icnVieXNoYXBlMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxLjAwMDAwMCwgLTIzLjAwMDAwMCkiIGZpbGw9IiMxRTIwMjkiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwMDAwIj4KICAgICAgPHBvbHlnb24gaWQ9InJhaWxzbGlrZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuNTAwMDAwLCA1MS4wMDAwMDApIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC01MS41MDAwMDAsIC01MS4wMDAwMDApICIgcG9pbnRzPSI1MS41IDI0IDgxIDYxLjY4MzU3MzQgNjkuNzMyMDAyNyA3OCAzMy4yNjc5OTczIDc4IDIyIDYxLjY4MzU3MzQiPjwvcG9seWdvbj4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Bootiful | Profile</title>
+    <title>Bootiful | Notification</title>
     <meta name="keywords" content="Bootstrap, SCSS, Gulp, JavaScript">
     <meta name="description" content="A free and open-source Bootstrap v5 template">
-    <meta name="og:title" content="Bootiful Profile">
+    <meta name="og:title" content="Bootiful Notification">
     <meta name="og:description" content="A free and open-source Bootstrap v5 template">
 </head>
 
@@ -60,8 +60,8 @@
         <div class="secondarynav bg-light mb-3 flex-center border-bottom" style="min-height: 48px">
             <div class="container py-1">
                 <div class="d-flex flex-row flex-wrap">
-                    <a class="btn btn-secondarynav shadow-none active" href="/profile">Account</a>
-                    <a class="btn btn-secondarynav shadow-none " href="/profile/notification">Notifications</a>
+                    <a class="btn btn-secondarynav shadow-none " href="/profile">Account</a>
+                    <a class="btn btn-secondarynav shadow-none active" href="/profile/notification">Notifications</a>
                     <a class="btn btn-secondarynav shadow-none " href="/profile/delete">Danger Zone</a>
                     <a class="btn btn-secondarynav shadow-none " href="/profile/billing">Billing</a>
                 </div>
@@ -71,30 +71,41 @@
     <div class="main">
         <div class="container py-3">
             <div class="d-flex flex-row justify-content-between align-items-center mb-4">
-                <h3 class="mb-2 mb-lg-0 fw-bold">Account</h3>
+                <h3 class="mb-2 mb-lg-0 fw-bold">Notification Settings</h3>
             </div>
             <div class="mb-5 p-4 card">
-                <h5>Jane Doe</h5>
-                <p class="fs-small text-muted mb-1">janedoe@example.com</p>
-                <p class="fs-small text-muted mb-4">Joined on <span>Jan. 27, 2021, 7:04 p.m.</span></p>
-                <div class="mb-3 d-flex flex-row">
-                    <a class="btn bg-white btn-sm me-2" href="/settings/account/change-email/">Change email</a>
-                    <form class="" action="" method="post">
-                        <button type="submit" class="btn bg-white btn-sm">Reset password</button>
-                    </form>
-                </div>
-            </div>
-            <div class="mb-5 p-4 card">
-                <form method="get" action="/profile">
-                    <fieldset class="mt-2">
-                        <legend class="h6 fw-600">Personal Information</legend>
-                        <div id="div_id_name" class="mb-3 pt-2">
-                            <label for="id_name" class="form-label requiredField"> Display Name<span class="asteriskField">&nbsp;*</span>
-                            </label>
-                            <input type="text" name="name" value="Jane Doe" maxlength="254" class="textinput textInput form-control" required="" id="id_name">
+                <form method="post">
+                    <fieldset>
+                        <legend class="h6 fw-600 mb-3">Marketing Communications</legend>
+                        <div class="mb-3">
+                            <div id="div_id_accepted_marketing_emails" class="mb-2">
+                                <input type="checkbox" name="accepted_marketing_emails" class="checkboxinput form-check-input" id="id_accepted_marketing_emails">
+                                <label for="id_accepted_marketing_emails" class="ms-1 form-check-label fs-small text-muted"> Subscribe to newsletter (four times a month) </label>
+                            </div>
+                            <div id="div_id_accepted_marketing_emails" class="mb-2">
+                                <input type="checkbox" name="accepted_marketing_emails" class="checkboxinput form-check-input" id="id_accepted_marketing_emails">
+                                <label for="id_accepted_marketing_emails" class="ms-1 form-check-label fs-small text-muted"> Subscribe to Ruby-on-Rails courses </label>
+                            </div>
+                            <div id="div_id_accepted_marketing_emails" class="mb-3">
+                                <input type="checkbox" name="accepted_marketing_emails" class="checkboxinput form-check-input" id="id_accepted_marketing_emails">
+                                <label for="id_accepted_marketing_emails" class="ms-1 form-check-label fs-small text-muted"> I accept to be contacted for surveys </label>
+                            </div>
                         </div>
                     </fieldset>
-                    <div class="buttonHolder mt-3">
+                    <fieldset>
+                        <legend class="h6 fw-600 mt-4  mb-3">Email Reports</legend>
+                        <div id="div_id_reporting_frequency" class="mb-3">
+                            <label for="id_reporting_frequency" class="form-label requiredField"> How often should we send you an email report ? <span class="asteriskField">*</span>
+                            </label>
+                            <select name="reporting_frequency" class="select form-select" id="id_reporting_frequency">
+                                <option value="weekly" selected="">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="yearly">Yearly</option>
+                                <option value="never">Never</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <div class="buttonHolder">
                         <input type="submit" name="submit" value="Save" class="btn btn-primary btn btn-dark btn-sm" id="submit-id-submit">
                     </div>
                 </form>
