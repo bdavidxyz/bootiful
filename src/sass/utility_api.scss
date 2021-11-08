@@ -1,6 +1,17 @@
 // See https://getbootstrap.com/docs/5.1/utilities/api/
 $utilities: (
 
+
+  "hover-text-decoration": (
+    property: 'text-decoration',
+    class: 'text-decoration',
+    state: hover,
+    values: (
+      'none': 'none',
+      'underline': 'underline',
+    )
+  ),
+
   // will underline text
   "highlight": (
     class: "highlight",
@@ -54,5 +65,8 @@ $utilities: (
       400: '400px',
     )
   ),
+
+
+);
 
 );
