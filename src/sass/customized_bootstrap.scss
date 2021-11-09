@@ -76,11 +76,14 @@ html {
     transition: transform .2s, background .3s, box-shadow .3s, color .3s;
   }
 
+  a {
+    font-weight: 700;
+  }
 }
 
 // Override any Bootstrap props linked to the public website (landing page, faq, etc)
 .site {
-  .nav-link {
+  .navbar-light .navbar-nav .nav-link {
     color: $gray-900;
 
     &:hover {

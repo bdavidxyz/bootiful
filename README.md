@@ -20,7 +20,7 @@ Copy the src/sass folder in your own project, then compile the SCSS with your ow
 
 Either look at the HTML files under `src/*.html`, `src/partials/*.html`.
 
-Or go to the clickable demo and copy/paste html from there : [bootiful.org](https://bootiful.org)
+Or go to the clickable demo and copy/paste html from there : [bootiful.org/blog/take-a-tour](https://bootiful.org/blog/take-a-tour)
 
 ### JS
 
