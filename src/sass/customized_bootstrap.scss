@@ -122,7 +122,14 @@ html {
 
 }
 
-
+.article {
+  h2 {
+    margin-top: 3rem;
+  }
+  p {
+    // font-size: 18px;
+  }
+}
 
 // Override any Bootstrap props linked to the admin dashboard (all pages under the /admin URL)
 .admin {
