@@ -1,0 +1,12 @@
+{% set page_name = 'Home' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %}
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
+{% extends "layouts/site.html" %}
+
+{% import "macros/articleMacro.njk" as articleMacro %}
+
+{% block content %}
+<main>
+  {{ articleMacro.article('header two') }}
+</main>
+{% endblock %}

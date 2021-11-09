@@ -19,17 +19,6 @@ const htmlFile = [
 const njk = require('gulp-nunjucks-render')
 const beautify = require('gulp-beautify')
 
-// function html() {
-//     return gulp.src(htmlFile)
-//         .pipe(htmlPartial({
-//             basePath: 'src/partials/'
-//         }))
-//         .pipe(gulpIf(isProd, htmlmin({
-//             collapseWhitespace: true
-//         })))
-//         .pipe(gulp.dest('docs'));
-// }
-
 function html() {
     return gulp.src('src/html/pages/**/*.+(html|njk)')
         .pipe(
