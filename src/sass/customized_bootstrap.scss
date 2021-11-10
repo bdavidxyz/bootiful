@@ -3,6 +3,7 @@
 * any bootstrap variable defined in bootstrap/scss/_variables.scss
 */
 $enable-negative-margins: true;
+$rfs-base-value: 1rem;
 
 $primary: #0d58c9;
 
@@ -34,6 +35,10 @@ $link-decoration: none;
 $link-hover-decoration: underline;
 
 
+// $border-radius-sm: .25rem;
+// $border-radius:    .5rem;
+// $border-radius-lg: 1rem ;
+
 $lead-font-size: 1.4rem;
 $lead-font-weight: 400;
 $btn-font-weight: 500;
@@ -55,6 +60,8 @@ $transition-fade:             opacity .5s linear;
  */
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/utilities";
 @import "./utility_api";
 @import "./utility_custom";
 
@@ -130,7 +137,14 @@ html {
     margin-top: 3rem;
   }
   p {
-    // font-size: 18px;
+    // font-size: 20px;
+    // font-size: rfs-fluid-value(20rem);
+    @include font-size(1.25rem);
+    // @include rfs(4rem, font-size
+    // font-size: rfs-fluid-value(2.125rem);
+  }
+  pre code {
+    border-radius: 1rem;
   }
 }
 

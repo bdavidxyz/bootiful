@@ -5,10 +5,7 @@
 {% import "macros/articleMacro.njk" as articleMacro %}
 
 {% block stylesheets %}
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css" integrity="sha512-3xLMEigMNYLDJLAgaGlDSxpGykyb+nQnJBzbkQy2a0gyVKL2ZpNOPIj1rD8IPFaJbwAgId/atho1+LBpWu5DhA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/rainbow.css" integrity="sha256-mNsC2+5lyYTSuHolbgseIohtf8ONvbs6pp4fjRvl0GY=" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/tomorrow.css" integrity="sha256-EjHbGDoCymFx3wLfmg4QbPuip46g1WVlqLGnK3di+54=" crossorigin="anonymous"> -->
 {% endblock %}
 
 {% block content %}
@@ -30,18 +27,18 @@
           </h2>
           <pre>
             <code class="language-scss">
-.article {
-  h1, h2, h3, h4 {
-    line-height: 1.2;
-    margin-bottom: $space-xs;
-  }
+  .article {
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      margin-bottom: $space-xs;
+    }
 
-  ul, ol, p, blockquote {
-    line-height: 1.5;
-    margin-bottom: $space-md;
+    ul, ol, p, blockquote {
+      line-height: 1.5;
+      margin-bottom: $space-md;
+    }
   }
-}
-            </code>
+              </code>
           </pre>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui laboriosam officia numquam dicta voluptatem unde, sit ipsa, beatae velit reiciendis tenetur! Id tempore praesentium cumque ex magni suscipit temporibus itaque.</p>
           <h2>
@@ -65,8 +62,10 @@
 {% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+
   document.addEventListener("DOMContentLoaded", function(event) { 
     hljs.highlightAll();
   });
+
 </script>
 {% endblock %}

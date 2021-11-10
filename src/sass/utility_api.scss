@@ -1,7 +1,21 @@
 // See https://getbootstrap.com/docs/5.1/utilities/api/
 $utilities: (
 
-
+  "rounded": (
+    property: border-radius,
+    class: rounded,
+    values: (
+      null: $border-radius,
+      0: 0,
+      1: $border-radius-sm,
+      2: $border-radius,
+      3: $border-radius-lg,
+      4: $border-radius*2,
+      5: $border-radius*4,
+      circle: 50%,
+      pill: $border-radius-pill
+    )
+  ),
   "hover-text-decoration": (
     property: 'text-decoration',
     class: 'text-decoration',
