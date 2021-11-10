@@ -3,23 +3,38 @@
 {% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
 {% extends "layouts/site.html" %}
 {% import "macros/articleMacro.njk" as articleMacro %}
-
 {% block content %}
 <main>
-
   <div class="container py-5">
     <div class="row">
       <div class="col col-lg-8 mx-auto">
-
         {{ articleMacro.article_header('A simple blog article', 'David B', 'November 6, 2021', '4') }}
-
         <div class="w-100 article">
           <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ut ipsa architecto cum optio voluptas laboriosam rem, quod, magnam aspernatur iste in, dolore! Cupiditate minima quam, repellendus vel fuga cum..</p>
           <p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Consequuntur quod tenetur repellat excepturi, sunt vel. Atque, earum ipsum, dolorum quasi provident veritatis ea cumque sunt sequ.</p>
           <p>In this article aer mlazer mlazekr malzekjr aezrjez gamlvka zemlkrj azerfmlvakjze fmlazekjr mlezajkr.</p>
           <h2>
-            <span id="a-title">A title</span>
+            A title
           </h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui laboriosam officia numquam dicta voluptatem unde, sit ipsa, beatae velit reiciendis tenetur! Id tempore praesentium cumque ex magni suscipit temporibus itaque.</p>
+          <h2>
+            Now some code
+          </h2>
+          <pre>
+            <code class="language-scss">
+.article {
+  h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: $space-xs;
+  }
+
+  ul, ol, p, blockquote {
+    line-height: 1.5;
+    margin-bottom: $space-md;
+  }
+}
+            </code>
+          </pre>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui laboriosam officia numquam dicta voluptatem unde, sit ipsa, beatae velit reiciendis tenetur! Id tempore praesentium cumque ex magni suscipit temporibus itaque.</p>
           <h2>
             <span id="conclusion">Conclusion</span>
@@ -30,14 +45,11 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col col-lg-8 mx-auto">
         {% include "partials/end_of_article.html" %}
       </div>
     </div>
-
   </div>
-
 </main>
 {% endblock %}
