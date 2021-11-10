@@ -136,15 +136,12 @@ html {
   h2 {
     margin-top: 3rem;
   }
-  p {
-    // font-size: 20px;
-    // font-size: rfs-fluid-value(20rem);
-    @include font-size(1.25rem);
-    // @include rfs(4rem, font-size
-    // font-size: rfs-fluid-value(2.125rem);
-  }
-  pre code {
-    border-radius: 1rem;
+  pre {
+    display: flex;
+    code {
+      width: 100%;
+      border-radius: 1rem;
+    }
   }
 }
 

@@ -3,11 +3,9 @@
 {% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
 {% extends "layouts/site.html" %}
 {% import "macros/articleMacro.njk" as articleMacro %}
-
 {% block stylesheets %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
-
 {% block content %}
 <main>
   <div class="container py-5">
@@ -15,18 +13,77 @@
       <div class="col col-lg-8 mx-auto">
         {{ articleMacro.article_header('A simple blog article', 'David B', 'November 6, 2021', '4') }}
         <div class="w-100 article">
-          <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ut ipsa architecto cum optio voluptas laboriosam rem, quod, magnam aspernatur iste in, dolore! Cupiditate minima quam, repellendus vel fuga cum..</p>
-          <p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Consequuntur quod tenetur repellat excepturi, sunt vel. Atque, earum ipsum, dolorum quasi provident veritatis ea cumque sunt sequ.</p>
-          <p>In this article aer mlazer mlazekr malzekjr aezrjez gamlvka zemlkrj azerfmlvakjze fmlazekjr mlezajkr.</p>
+          <p>The goal of this article is to see how content, paragraph, typography, could look like in any blog article. This about a "showcase" of the blogging abilities of Bootiful. Vertical spacing, coding excerpt, quotes, and so on. How should they look like ? This article tries to bring answers.</p>
           <h2>
-            A title
+            Some paragraphs
           </h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui laboriosam officia numquam dicta voluptatem unde, sit ipsa, beatae velit reiciendis tenetur! Id tempore praesentium cumque ex magni suscipit temporibus itaque.</p>
+          <p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. <strong>This is strong.</strong> Nullam dignissim convallis est. Quisque aliquam. <em>This is emphasized.</em> Donec faucibus. Nunc iaculis suscipit dui. 5<sup>3</sup> = 125. Water is H<sub>2</sub>O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <cite>The New York Times</cite> (That’s a citation). <span style="text-decoration:underline;">Underline.</span> Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+          <p><abbr title="Hyper Text Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. To copy a file type <code>COPY <var>filename</var></code>. <del>Dinner’s at 5:00.</del> <ins>Let’s make that 7.</ins> This <span style="text-decoration:line-through;">text</span> has been struck.</p>
+          <h2 id="textlevelsemantics">Text-level semantics</h2>
+          <p>One <a href="#">a element</a> sample<br>
+            One <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> samples<br>
+            One <b>b element</b> sample<br>
+            One <cite>cite element</cite> sample<br>
+            One <code>code element</code> sample<br>
+            One <del>del element</del> sample<br>
+            One <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> samples<br>
+            One <em>em element</em> sample<br>
+            One <i>i element</i> sample<br>
+            One <ins>ins element</ins> sample<br>
+            One <kbd>kbd element</kbd> sample<br>
+            One <mark>mark element</mark> sample<br>
+            One <q>q element <q>inside</q> a q element</q> sample<br>
+            One <s>s element</s> sample<br>
+            One <samp>samp element</samp> sample<br>
+            One <small>small element</small> sample<br>
+            One <span>span element</span> sample<br>
+            One <strong>strong element</strong> sample<br>
+            One <sub>sub element</sub> sample<br>
+            One <sup>sup element</sup> sample<br>
+            One <var>var element</var> sample<br>
+            One <u>u element</u> sample</p>
+          <h2 id="blockquotes">Blockquotes</h2>
+          <p>Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.</p>
+          <blockquote class="blockquote border-start ps-3 border-5">
+            <p>If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. <cite>— <a href="http://en.wikipedia.org/wiki/Oprah_Winfrey">Oprah Winfrey</a></cite></p>
+          </blockquote>
+          <p>And here’s a bit of trailing text.</p>
+          <h2>
+            List
+          </h2>
+          <h3>Ordered List</h3>
+          <ol>
+            <li>Ordered Item 1</li>
+            <li>Ordered Item 2</li>
+            <li>Special Item 3
+              <ol>
+                <li>Nested Number One</li>
+                <li>Nested Number Two</li>
+              </ol>
+            </li>
+            <li>Ordered Item 4</li>
+            <li>Ordered Item 5</li>
+          </ol>
+          <h3>Unordered List</h3>
+          <ul>
+            <li>Ordered Item 1</li>
+            <li>Ordered Item 2</li>
+            <li>Special Item 3
+              <ul>
+                <li>Nested Number One</li>
+                <li>Nested Number Two</li>
+              </ul>
+            </li>
+            <li>Ordered Item 4</li>
+            <li>Ordered Item 5</li>
+          </ul>
           <h2>
             Now some code
           </h2>
-          <pre>
-            <code class="language-scss">
+          <p class="">
+            Let's see how code could look like.
+          </p>
+          <pre class=""><code class="language-scss">
   .article {
     h1, h2, h3, h4 {
       line-height: 1.2;
@@ -40,7 +97,7 @@
   }
               </code>
           </pre>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui laboriosam officia numquam dicta voluptatem unde, sit ipsa, beatae velit reiciendis tenetur! Id tempore praesentium cumque ex magni suscipit temporibus itaque.</p>
+          <p>Highlightjs helps to <em>style</em> nicely code excerpts. Normally it would be displayed mostly black and white, even if there are some special HTML tags dedicated for code.</p>
           <h2>
             <span id="conclusion">Conclusion</span>
           </h2>
@@ -58,14 +115,11 @@
   </div>
 </main>
 {% endblock %}
-
 {% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-
-  document.addEventListener("DOMContentLoaded", function(event) { 
-    hljs.highlightAll();
-  });
-
+document.addEventListener("DOMContentLoaded", function(event) {
+  hljs.highlightAll();
+});
 </script>
 {% endblock %}
