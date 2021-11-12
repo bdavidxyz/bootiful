@@ -29,6 +29,24 @@
             </div>
           </div>
 
+          <div class="accordion mt-4" id="accordionSampleOneb">
+            <div class="accordion-item rounded-5">
+              <h2 class="accordion-header" id="headingOneb">
+                <button class="fs-base1p125 fw-600 accordion-button rounded-5 p-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneb" aria-expanded="false" aria-controls="collapseOneb"> 
+                  Does this template only use Bootstrap's classes ?
+                </button>
+              </h2>
+              <div id="collapseOneb" class="accordion-collapse collapse" aria-labelledby="headingOneb" data-bs-parent="#accordionSampleOneb" style="">
+                <div class="accordion-body">
+                  <p>We'd like to, but no. It would be a lot easier not to use any custom class, but let's face it : this is nearly impossible. There's often a detail that require a class that Bootstrap did not (yet) defined.</p>
+                  <p>So the goal of this template is to use the standard Bootstrap classes <em>as much as possible</em>.</p>
+                  <p>When this is not possible, the template relies on the custom utility API, and in last resort, some semantic classes (like .admin, .site etc) to reach the desired design.</p>
+                  <p>Custom classes are defined under the sass/ folder.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="accordion mt-4" id="accordionSampleTwo">
             <div class="accordion-item rounded-5">
               <h2 class="accordion-header" id="headingTwo">
@@ -117,7 +135,7 @@
               </h2>
               <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headineSeven" data-bs-parent="#accordionSampleSeven" style="">
                 <div class="accordion-body">
-                  <p>There are no "docs".</p>
+                  <p>There are no "docs". You can read the README of the GitHub project to see how to install and customize it.</p>
                   <p>The most simple way to understand this project is to read the source code.</p>
                   <p>Note that this is only a "frontend" project : there are no backend like Django, Rails or Laravel. All the authentication screen are purely "fake" screen : nothing is read from the user inputs.</p>
                   <p>Therefore, the code itself should be quite easy to follow and understand (I hope). There are no algorithms.</p>
@@ -127,10 +145,48 @@
             </div>
           </div>
 
+          <div class="accordion mt-4" id="accordionSampleHeight">
+            <div class="accordion-item rounded-5">
+              <h2 class="accordion-header" id="headineHeight">
+                <button class="fs-base1p125 fw-600 accordion-button rounded-5 p-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHeight" aria-expanded="false" aria-controls="collapseHeight"> 
+                  How could I borrow this template in my own project ?
+                </button>
+              </h2>
+              <div id="collapseHeight" class="accordion-collapse collapse" aria-labelledby="headineHeight" data-bs-parent="#accordionSampleHeight" style="">
+                <div class="accordion-body">
+                  <p>Simply copy/paste the sass/ folder, located at the root of the GitHub project.</p>
+                  <p>You have then to include these SCSS file into your own build tool, and copy/paste the HTML of this demo to get the same pages on your project.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion mt-4" id="accordionSampleNine">
+            <div class="accordion-item rounded-5">
+              <h2 class="accordion-header" id="headineNine">
+                <button class="fs-base1p125 fw-600 accordion-button rounded-5 p-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine"> 
+                  What if a page or design is missing for my project ?
+                </button>
+              </h2>
+              <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headineNine" data-bs-parent="#accordionSampleNine" style="">
+                <div class="accordion-body">
+                  <p>Normally this is a job for the designer.</p>
+                  <p>However you can take inspiration from other pages to try to make it yourself.</p>
+                  <p>You can also try to submit a PR on the GitHub project, we'll see if we can make it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
         <div class="col-lg">
         </div>
       </div>
-      <div class="my-5">&nbsp;</div>
+      <div class="py-3">
+        {% include "partials/bottom_cta.html" %}
+      </div>
+      
+
     </div>
     {% endblock %}
