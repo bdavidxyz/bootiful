@@ -80,11 +80,12 @@ $utilities: (
     )
   ),
 
-  "small-font-size": (
+  "base-font-size": (
     class: "fs",
     property: "font-size",
     values: (
       'small': $small-font-size,
+      'lead': $lead-font-size,
       'base09': $font-size-base * 0.9,
       'base08': $font-size-base * 0.8,
       'base07': $font-size-base * 0.7,
@@ -94,6 +95,9 @@ $utilities: (
       'base03': $font-size-base * 0.3,
       'base02': $font-size-base * 0.2,
       'base01': $font-size-base * 0.1,
+      'base1p125': $font-size-base * 1.125,
+      'base1p1': $font-size-base * 1.1,
+      'base1p2': $font-size-base * 1.2,
     )
   ),
 
