@@ -15,6 +15,18 @@
   <meta name="description" content="{{ SEO_description }}">
   <meta name="og:title" content="Bootiful {{ page_name }}">
   <meta name="og:description" content="{{ SEO_description }}">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KG8XXWZB5T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KG8XXWZB5T');
+  </script>
+  <!-- End of Google Analytics -->
+  
 </head>
 <body class="site {% if page_name in auth_pages %}bg-light{% endif %}">
 
