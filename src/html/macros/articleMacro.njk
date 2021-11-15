@@ -6,14 +6,11 @@
   </article>
 {% endmacro %}
 
-{% macro article_header(title, author, date, minread) %}
+{% macro article_header(title, date, minread) %}
   <div class="mb-5 text-left">
     <h1 class="display-4 mb-3" style="word-break: break-word;">{{title}}</h1>
     <div class="ml-1">
       <p class="m-0 text-sm">
-        <span>By {{author}}</a>
-        </span>
-        <span class="mx-1">·</span>
         <span>{{date}}</span>
         <span class="mx-1">·</span>
         <span>{{minread}} min read</span>
