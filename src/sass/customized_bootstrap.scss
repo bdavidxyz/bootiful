@@ -135,6 +135,16 @@ html {
 .article {
   h2 {
     margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: $gray-500;
+  }
+  li {
+    margin-bottom: 1rem;
   }
   pre {
     display: flex;
