@@ -12,18 +12,17 @@
     <meta name="description" content="A free and open-source Bootstrap v5 template">
     <meta name="og:title" content="Bootiful Profile">
     <meta name="og:description" content="A free and open-source Bootstrap v5 template">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KG8XXWZB5T"></script>
+    <!-- Panelbear analytics -->
+    <script async src="https://cdn.panelbear.com/analytics.js?site=9lOtKDiBkIQ"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-KG8XXWZB5T');
+        window.panelbear = window.panelbear || function() {
+            (window.panelbear.q = window.panelbear.q || []).push(arguments);
+        };
+        panelbear('config', {
+            site: '9lOtKDiBkIQ'
+        });
     </script>
-    <!-- End of Google Analytics -->
+    <!-- End of analytics -->
 </head>
 
 <body class="profile bg-light">
