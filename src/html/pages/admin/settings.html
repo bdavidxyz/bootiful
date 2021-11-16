@@ -1,0 +1,72 @@
+{% set page_name = 'Admin Settings' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %}
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
+{% extends "layouts/admin.html" %}
+{% block content %}
+<div id="dashboard-app" class="w-100 h-100">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex flex-column">
+        <div class="row mb-3">
+          <div class="col-12 col-lg-5 justify-content-start align-items-start mb-lg-2">
+            <h3 class="mb-2 mb-lg-0 fw-bold truncate">Website settings</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="mb-5 p-3 p-lg-4 card">
+              <h5>User session</h5>
+              <p class="text-sm mt-2">Reset or remove user session</p>
+              <div class="d-flex flex-row">
+                <a href="" class="btn btn-white btn-sm me-3">Reset sessions</a>
+                <a href="" class="btn btn-danger btn-sm text-white">Delete sessions</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-5 p-3 p-lg-4 card">
+              <h5>Global settings</h5>
+              <div class="form-check form-switch cursor-pointer">
+                <input class="form-check-input cursor-pointer" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label cursor-pointer" for="flexSwitchCheckDefault">Tracking is disabled</label>
+              </div>
+              <div class="form-check form-switch cursor-pointer">
+                <input class="form-check-input cursor-pointer" type="checkbox" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label cursor-pointer" for="flexSwitchCheckChecked">Allow user to send feedback</label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Send e-mails about security update</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="mb-5 p-3 p-lg-4 card">
+              <h5>bootiful.org</h5>
+              <p class="text-muted mb-4">Created on <span>Nov. 27, 2021, 7:11 p.m.</span></p>
+              <form method="get">
+                <input type="hidden" name="csrfmiddlewaretoken" value="dOyKq7iHUSgzRnVrygwkjZY6cIh33E5XHrRcoy3FxOeOhIEFKQojvli3oN0QvWwI">
+                <div id="div_id_name" class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">SEO Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Ex, vitae labore. Incidunt modi, dolorem temporibus, eum illum veritatis consequuntur dolore voluptatem omnis voluptate, in ad accusantium. Et consequatur cupiditate, temporibus.</textarea>
+                  <small id="hint_id_name" class="form-text text-muted">Approximately 160 characters.</small>
+                </div>
+                <div id="div_id_allowed_origins" class="mb-3">
+                  <label for="id_allowed_origins" class="form-label">
+                    SEO keywords
+                  </label>
+                  <input type="text" name="allowed_origins" maxlength="1024" class="textinput textInput form-control" id="id_allowed_origins" value="gulp, node, javascript">
+                  <small id="hint_id_allowed_origins" class="form-text text-muted">Separate multiple entries with a comma: "node, gulp, javascript"</small>
+                </div>
+                <button type="submit" class="btn btn-sm btn-dark">Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
