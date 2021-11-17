@@ -3,13 +3,30 @@
 {% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
 {% extends "layouts/admin.html" %}
 
+{% block stylesheets %}
+<link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+<script>
+  var config = {
+    options: [
+  { value: "opt1", text: "Option 1" },
+  { value: "opt2", text: "Option 2" },
+]
+  };
+  new TomSelect('#tom', config);
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="container">
 
 
   <div class="row mb-3">
   <div class="col-12 col-lg-5 justify-content-start align-items-start mb-lg-2">
-    <h3 class="mb-2 mb-lg-0 fw-bold truncate">Create new user</h3>
+    <h3 class="mb-2 mb-lg-0 fw-bold truncate">Create new User</h3>
   </div>
   <div class="col-12 col-lg-auto flex-1 ms-auto justify-content-center align-items-end mb-lg-2">
     <div class="d-flex flex-row w-100 h-100 justify-content-start justify-content-lg-end align-items-center flex-wrap">
@@ -65,97 +82,49 @@
 <div class="card p-3 p-lg-4 flex-column justify-content-center align-items-between">
   <form method="get" action="/admin/users?success=true">
     <fieldset>
-      <legend class="h6 fw-600 mb-3">General</legend>
       <div class="row ">
         <div class="col-12">
           <div id="div_id_name" class="mb-3">
             <label for="id_name" class="form-label requiredField">
-              Create new Username<span class="asteriskField ms-1">*</span>
+              Name<span class="asteriskField ms-1">*</span>
             </label>
             <input type="text" name="name" maxlength="256" class="textinput textInput form-control" required="" id="id_name" value="">
-            <small id="hint_id_name" class="form-text text-muted">To help you recognize it later</small>
+            <small id="hint_id_name" class="form-text text-muted">Name viewed by others</small>
           </div>
         </div>
         <div class="col-12">
-          <div class="mb-3">
+          <div id="div_id_name" class="mb-3">
+            <label for="id_name" class="form-label requiredField">
+              BirthDate<span class="asteriskField ms-1">*</span>
+            </label>
+            <input id="tom"></input>
+            <!-- <input type="text" name="birthdate" class="textinput textInput form-control" required="" id="tom-select-it" value=""> -->
+            <small id="hint_id_birthdate" class="form-text text-muted">Actual (or not) birth date</small>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-4">
             <div id="div_id_enabled" class="mb-3">
               <input type="checkbox" name="enabled" class="checkboxinput form-check-input" id="id_enabled" checked="">
               <label for="id_enabled" class="form-check-label">
-                Viewable
+                Access to API
               </label>
-              <small id="hint_id_enabled" class="form-text text-muted">Uncheck to hide if from suppliers</small>
+              <small id="hint_id_enabled" class="form-text text-muted">Uncheck to disallow API access</small>
             </div>
           </div>
         </div>
       </div>
     </fieldset>
+
     <fieldset>
-      <legend class="h6 fw-600 mb-3 mt-4">Quality panel</legend>
-      <div class="row ">
-        <div class="col-12">
-          <div id="div_id_query" class="mb-3">
-            <label for="id_query" class="form-label requiredField">
-              Delivery<span class="asteriskField ms-1">*</span>
-            </label>
-            <select name="query" class="select form-select" id="id_query">
-              <option value="empty"></option>
-              <option value="visitors_sum">Success</option>
-              <option value="views_sum">Warning</option>
-              <option value="page_load_avg">Default</option>
-              <option value="page_load_p50">Danger</option>
-              <option value="page_load_p95">None</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="row ">
-        <div class="col-auto col-md-4">
-          <div id="div_id_operator" class="mb-3">
-            <label for="id_operator" class="form-label requiredField">
-              Trigger alert when anything is<span class="asteriskField ms-1">*</span>
-            </label>
-            <select name="operator" class="select form-select" id="id_operator">
-              <option value="empty"></option>
-              <option value="gt">Above</option>
-              <option value="gte">Above or equal to</option>
-              <option value="lt">Below</option>
-              <option value="lte">Below or equal to</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-auto col-md-4">
-          <div id="div_id_threshold" class="mb-3">
-            <label for="id_threshold" class="form-label requiredField">
-              Threshold<span class="asteriskField ms-1">*</span>
-            </label>
-            <input type="number" name="threshold" class="numberinput form-control" required="" value="" id="id_threshold">
-          </div>
-        </div>
-        <div class="col-auto col-md-4">
-          <div id="div_id_period" class="mb-3">
-            <label for="id_period" class="form-label requiredField">
-              Unit<span class="asteriskField ms-1">*</span>
-            </label>
-            <select name="period" class="select form-select" id="id_period">
-              <option value="Minutes">Minutes</option>
-              <option value="Degree" selected="">Degree</option>
-              <option value="Angle">Angle</option>
-              <option value="Centimeters">Centimeters</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend class="h6 fw-600 mb-3 mt-4">Description</legend>
       <div class="row ">
         <div class="col-12">
           <div id="div_id_description" class="mb-3">
             <label for="id_description" class="form-label">
-              Enter a text for the manager
+              Current biography
             </label>
             <textarea name="description" class="form-select"></textarea>
-            <small id="hint_id_description" class="form-text text-muted">In case of a new user, manager will be notified immediately.</small>
+            <small id="hint_id_description" class="form-text text-muted">Enter some words about this user.</small>
           </div>
         </div>
       </div>
@@ -172,3 +141,5 @@
 
 </div>
 {% endblock %}
+
+
