@@ -162,6 +162,12 @@
                                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                         </div>
+                        <div class="toast js-create-success position-absolute align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body"> User successfully created. </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
                         <div class="toast js-edit-failure position-absolute align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="d-flex">
                                 <div class="toast-body"> User edition cancelled. </div>
@@ -612,6 +618,9 @@
             });
             if (bootiful.urlParam('submit')) {
                 bootiful.displayToasts('js-edit-success')
+            }
+            if (bootiful.urlParam('create')) {
+                bootiful.displayToasts('js-create-success')
             }
             if (bootiful.urlParam('cancelled')) {
                 bootiful.displayToasts('js-edit-failure')
