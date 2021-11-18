@@ -35,10 +35,6 @@ $link-decoration: none;
 $link-hover-decoration: underline;
 
 
-// $border-radius-sm: .25rem;
-// $border-radius:    .5rem;
-// $border-radius-lg: 1rem ;
-
 $lead-font-size: 1.4rem;
 $lead-font-weight: 400;
 $btn-font-weight: 500;
@@ -52,9 +48,6 @@ $form-label-color: #12141d;
 
 $transition-fade:             opacity .5s linear;
 
-// $transition-collapse:         height .95s ease;
-// $transition-collapse-width:   width .95s ease;
-
 /**
  *  import the necessary Bootstrap files 
  */
@@ -65,6 +58,12 @@ $transition-fade:             opacity .5s linear;
 @import "./utility_api";
 @import "./utility_custom";
 
+
+@each $color, $value in $grays {
+  .gray-bg-#{$color} {
+    background-color: #{$value};
+  }
+}
 
 /** 
 * Overrides an existing Bootstrap class

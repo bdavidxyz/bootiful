@@ -1,0 +1,134 @@
+{% set page_name = 'Styleguide' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %}
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
+{% extends "layouts/site.html" %}
+{% block content %}
+<div class="container mt-5" style="max-width: 1140px">
+  <h1 class="text-center">Styleguide</h1>
+  <p class="lead text-center">All styles available, and links to the Bootstrap docs.</p>
+  <h2 class="fw-bold mt-4 pt-4">Functional colors</h2>
+  <hr class="mb-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-primary text-white">Primary</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-secondary text-white">Secondary</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-success text-white">Success</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-danger text-white">Danger (=Error)</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-warning text-dark">Warning</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-info text-white">Info</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-light text-dark">Light</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 bg-dark text-white">Dark</div>
+    </div>
+  </div>
+  <h2 class="fw-bold mt-4 pt-4">Grayscale</h2>
+  <hr class="mb-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="p-3 mb-3">gray-100</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-200">gray-200</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-300">gray-300</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-400">gray-400</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-500">gray-500</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-600 text-white">gray-600</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-700 text-white">gray-700</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-800 text-white">gray-800</div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 mb-3 gray-bg-900 text-white">gray-900</div>
+    </div>
+  </div>
+  <h2 class="fw-bold mt-4 pt-4">Boutons</h2>
+  <hr class="mb-4">
+  <p>
+    <a class="btn btn-lg btn-dark text-white flex-center mx-auto mx-lg-2 mb-2 w-100" href="https://github.com/bdavidxyz/bootiful" style="max-width:280px"> 
+      Primary btn
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="28" height="28" fill="currentColor" class="ml-1">
+        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+      </svg>
+    </a>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <h2 class="fw-bold mt-4 pt-4">Spacings</h2>
+  <hr class="mb-4">
+  <div class="d-flex">
+    <div class="">
+      <div class="border bg-light">Reference</div>
+    </div>
+    <div class="ms-1">
+      <div class="border bg-light">ms-1 = margin-left-1 = actual spacing is 4px</div>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="">
+      <div class="border bg-light">Reference</div>
+    </div>
+    <div class="ms-2">
+      <div class="border bg-light">ms-2 = margin-left-2 = actual spacing is 8px</div>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="">
+      <div class="border bg-light">Reference</div>
+    </div>
+    <div class="ms-3">
+      <div class="border bg-light">m-3 = margin-left-3 = actual spacing is 16px</div>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="">
+      <div class="border bg-light">Reference</div>
+    </div>
+    <div class="ms-4">
+      <div class="border bg-light">ms-4 = margin-left-4 = actual spacing is 24px</div>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="">
+      <div class="border bg-light">Reference</div>
+    </div>
+    <div class="ms-5">
+      <div class="border bg-light">ms-5 = margin-left-5 = actual spacing is 48px</div>
+    </div>
+  </div>
+  <h2 class="fw-bold mt-4 pt-4">Typography</h2>
+  <hr class="mb-4">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <p>A simple paragraph with text. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius iure sapiente, ab ea aliquid minima animi maxime incidunt accusantium, sunt cupiditate soluta perferendis deleniti vitae commodi ratione fugiat ut quidem.</p>
+</div>
+{% endblock %}
