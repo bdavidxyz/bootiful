@@ -12,9 +12,16 @@
 <script>
   var config = {
     options: [
-  { value: "opt1", text: "Option 1" },
-  { value: "opt2", text: "Option 2" },
-]
+      { value: "opt1", text: "Shoes" },
+      { value: "opt2", text: "Plant" },
+      { value: "opt3", text: "Computer" },
+      { value: "opt4", text: "Paint" },
+      { value: "opt5", text: "Table" },
+      { value: "opt6", text: "Rose" },
+      { value: "opt7", text: "Napkin" },
+      { value: "opt8", text: "Glass" },
+      { value: "opt9", text: "Tree" },
+    ]
   };
   new TomSelect('#tom', config);
 </script>
@@ -89,24 +96,32 @@
               Name<span class="asteriskField ms-1">*</span>
             </label>
             <input type="text" name="name" maxlength="256" class="textinput textInput form-control" required="" id="id_name" value="">
-            <small id="hint_id_name" class="form-text text-muted">Name viewed by others</small>
+            <small id="hint_id_name" class="form-text text-muted">Name viewed by others.</small>
           </div>
         </div>
         <div class="col-12">
           <div id="div_id_name" class="mb-3">
             <label for="id_name" class="form-label requiredField">
-              BirthDate<span class="asteriskField ms-1">*</span>
+              Birth Date<span class="asteriskField ms-1">*</span>
+            </label>
+            <input type="date" name="birthdate" class="textinput textInput form-control" id="id_birthdate" style="max-width: 200px">
+            <small id="hint_id_birthdate" class="form-text text-muted">Day the user was born.</small>
+          </div>
+        </div>
+        <div class="col-12">
+          <div id="div_id_name" class="mb-3">
+            <label for="id_name" class="form-label requiredField">
+              Articles<span class="asteriskField ms-1">*</span>
             </label>
             <input id="tom"></input>
-            <!-- <input type="text" name="birthdate" class="textinput textInput form-control" required="" id="tom-select-it" value=""> -->
-            <small id="hint_id_birthdate" class="form-text text-muted">Actual (or not) birth date</small>
+            <small id="hint_id_articles" class="form-text text-muted">Articles created by this user</small>
           </div>
         </div>
         <div class="col-12">
           <div class="mb-4">
             <div id="div_id_enabled" class="mb-3">
-              <input type="checkbox" name="enabled" class="checkboxinput form-check-input" id="id_enabled" checked="">
-              <label for="id_enabled" class="form-check-label">
+              <input type="checkbox" name="enabled" class="checkboxinput form-check-input cursor-pointer" id="id_enabled" checked="">
+              <label for="id_enabled" class="form-check-label cursor-pointer">
                 Access to API
               </label>
               <small id="hint_id_enabled" class="form-text text-muted">Uncheck to disallow API access</small>
@@ -123,7 +138,7 @@
             <label for="id_description" class="form-label">
               Current biography
             </label>
-            <textarea name="description" class="form-select"></textarea>
+            <textarea name="description" class="form-control"></textarea>
             <small id="hint_id_description" class="form-text text-muted">Enter some words about this user.</small>
           </div>
         </div>
@@ -132,7 +147,7 @@
     <div class="buttonHolder justify-content-between">
       <div>
         <input type="button" name="cancel" value="Cancel" class="btn btn bg-white btn-sm" id="button-id-cancel" onclick="window.location.href='/admin/users?cancelled=true'">
-        <input type="submit" name="submit" value="Save" class="btn btn-primary btn btn-dark btn-sm" id="submit-id-submit">
+        <input type="submit" name="create" value="Save" class="btn btn-primary btn btn-dark btn-sm" id="submit-id-submit">
       </div>
     </div>
   </form>
