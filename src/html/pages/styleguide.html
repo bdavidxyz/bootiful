@@ -65,20 +65,44 @@
       <div class="p-3 mb-3 gray-bg-900 text-white">gray-900</div>
     </div>
   </div>
-  <h2 class="fw-bold mt-4 pt-4">Boutons</h2>
+  <h2 class="fw-bold mt-4 pt-4">Buttons</h2>
   <hr class="mb-4">
   <p>
-    <a class="btn btn-lg btn-dark text-white flex-center mx-auto mx-lg-2 mb-2 w-100" href="https://github.com/bdavidxyz/bootiful" style="max-width:280px"> 
-      Primary btn
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="28" height="28" fill="currentColor" class="ml-1">
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
-      </svg>
+    <a class="btn btn-lg btn-dark text-white flex-center mx-auto mx-lg-2 mb-2 w-100" href="https://github.com/bdavidxyz/bootiful" style="max-width:280px">
+      Dark button
     </a>
+    <a class="btn btn-lg flex-center mx-auto mx-lg-2 mb-2 w-100" href="#" rel="noopener" style="max-width:280px"> White Button </a>
   </p>
-  <p>
-  </p>
-  <p>
-  </p>
+  <div class="ms-2 mb-1 d-flex flex-column flex-md-row">
+    <button type="button" class="d-flex justify-content-center align-items-center btn btn-primary btn-sm" disabled="disabled" style="max-width: 204px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+      </svg>
+      <span class="text-sm ms-2">Disabled button</span>
+    </button>
+    <button type="button" class="d-flex justify-content-center align-items-center btn btn-primary btn-sm ms-md-3 mt-2 mt-md-0" style="max-width: 204px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+      </svg>
+      <span class="text-sm ms-2">Enabled button</span>
+    </button>
+    <div class="dropdown ms-md-3 mt-2 mt-md-0">
+      <button id="dropdownMenuButton1" aria-expanded="false" type="button" data-bs-toggle="dropdown" class="d-flex justify-content-center align-items-center bg-white dropdown-toggle btn btn-white btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+          <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"></path>
+          <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"></path>
+        </svg>
+        <span class="text-sm me-1 ms-2">Small white dropdown</span>
+      </button>
+      <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton1" style="">
+        <li><small><a class="dropdown-item" href="#">Website home</a></small></li>
+        <li><small><a class="dropdown-item" href="#">Admin dashboard</a></small></li>
+        <li><small><a class="dropdown-item" href="#">Previous page</a></small></li>
+      </ul>
+    </div>
+  </div>
   <h2 class="fw-bold mt-4 pt-4">Spacings</h2>
   <hr class="mb-4">
   <div class="d-flex">
@@ -130,5 +154,6 @@
   <h5>Heading 5</h5>
   <h6>Heading 6</h6>
   <p>A simple paragraph with text. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius iure sapiente, ab ea aliquid minima animi maxime incidunt accusantium, sunt cupiditate soluta perferendis deleniti vitae commodi ratione fugiat ut quidem.</p>
+  <div class="mt-5">&nbsp;</div>
 </div>
 {% endblock %}
