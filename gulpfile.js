@@ -18,6 +18,7 @@ const htmlFile = [
 ]
 const njk = require('gulp-nunjucks-render')
 const beautify = require('gulp-beautify')
+const sitemap = require('gulp-sitemap');
 
 function html() {
     return gulp.src('src/html/pages/**/*.+(html|njk)')
@@ -98,10 +99,20 @@ function copy() {
            .pipe(gulp.dest('./docs/'));
 }
 
+async function createSitemap() {
+    gulp.src('docs/**/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: 'https://bootiful.org'
+        }))
+        .pipe(gulp.dest('./docs'));
+}
+
 exports.css = css;
 exports.copy = copy;
 exports.html = html;
 exports.js = js;
 exports.del = del;
 exports.serve = gulp.parallel(html, css, js, img, watchFiles, serve);
-exports.default = gulp.series(del, copy, html, css, js, img);
+exports.default = gulp.series(del, copy, html, css, js, img, createSitemap);
