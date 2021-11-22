@@ -80,6 +80,7 @@ function browserSyncReload(done) {
 
 function watchFiles() {
     gulp.watch('src/**/*.html', gulp.series(html, browserSyncReload));
+    gulp.watch('src/**/*.njk', gulp.series(html, browserSyncReload));
     gulp.watch('src/**/*.scss', gulp.series(css, browserSyncReload));
     gulp.watch('src/**/*.js', gulp.series(js, browserSyncReload));
     gulp.watch('src/img/**/*.*', gulp.series(img));
