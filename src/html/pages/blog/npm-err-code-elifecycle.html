@@ -1,0 +1,77 @@
+{% set page_name = 'npm err code elifecycle' %}
+{% set SEO_description = 'A free and open-source Bootstrap v5 template' %}
+{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
+{% extends "layouts/site.html" %}
+
+{% import "macros/articleMacro.njk" as articleMacro %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+{% block content %}
+<main class="article">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col col-lg-8 mx-auto">
+        {{ articleMacro.article_header('npm ERR! code ELIFECYCLE - how to debug', 'November 22, 2021', '3') }}
+        <div class="w-100">
+          <p>The goal of this article is to help you to debug the annoying "npm ERR! code ELIFECYCLE". You don't have time to know why this happens, and you want to correct it now ? That is the right place to do so. </p>
+          <h2>
+            Some context
+          </h2>
+          <p>Node.js allows developers use JavaScript to create new command line tools. NPM is a package manager for Node.js. It's the default one. It consists of a command line client, and an online database of public and private packages, called the "npm registry", and is available <a href="https://www.npmjs.com/">here</a>.</p>
+
+          <p>
+            When you create an application developed on the Node.js platform, you can set up an error management system to take care of the problems encountered. The "ELIFECYCLE" error occurs when an unknown error caused the application to fail. Probably another software was running and conflicted with yours. When not, you have the  possibility to redo a clean installation of your application.
+          </p>
+
+          <h2>
+            npm ERR! code ELIFECYCLE
+          </h2>
+          <figure class="figure">
+            <img width="600px" loading="lazy" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/e_shadow:25,r_40/v1637592412/bootstrap/npmerr.png" alt="showing error">
+            <figcaption class="figure-caption">An annoying bug, indeed.</figcaption>
+          </figure>
+          <p>
+            The "ELIFECYCLE" error corresponds neither to a syntax error in the code nor to a permission problem because other sentences are then used to notify the error. This error reported that an unknown event caused the application to run normally. So you can check that another application is not using a resource that you need. This can be for example a port of the machine, or a component. You need to examine the log and see when the app has a problem.
+          </p>
+          <h2>How to debug</h2>
+          <p>
+            <strong>1 - clear the npm cache</strong> The problem could also be with the installation of your application which encountered an unknown problem. To solve this, it is possible to start again on a healthy basis by reinstalling all the modules used by the application, and by emptying the NPM node package manager cache. The "npm cache clean" command clears the npm cache. Add the "--force" argument to force the operation.
+          </p>
+          <pre><code class="language-bash">npm cache clean --force</code></pre>
+          <p><strong>2 - delete node_modules</strong> just go to the root directory of your application and delete the "node_modules" folder. To remove the directory from the command line, the command depends on your operating system. The "rm" command is used with a Unix operating system. The arguments "r" and "f" indicate respectively to delete the subfolders and to force the deletion without asking for confirmation.</p>
+          With Linux-based system:
+          <pre><code class="language-bash">rm -rf node_modules</code></pre>
+          With Windows-based system :
+          <pre><code class="language-bash">rd /s /q "node_modules"</code></pre>
+          <p><strong>3 - reinstall node_modules</strong> The "npm install" wil trigger a full download and installation of modules you need in your application. All you have to do then is to use the command "npm start" (check your package.json accordingly) to restart your application</p>
+          With npm:
+          <pre><code class="language-bash">npm install</code></pre>
+          With yarn:
+          <pre><code class="language-bash">yarn</code></pre>
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-lg-8 mx-auto">
+        {% include "partials/end_of_article.html" %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  hljs.highlightAll();
+});
+</script>
+{% endblock %}

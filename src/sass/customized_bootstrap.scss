@@ -155,6 +155,10 @@ html {
       border-radius: 1rem;
     }
   }
+  img {
+    box-shadow: 0 6px 40px 0 rgba(116,129,141,.14);
+    max-width: 80%;
+  }
 }
 
 // Override any Bootstrap props linked to the admin dashboard (all pages under the /admin URL)
