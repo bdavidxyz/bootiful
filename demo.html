@@ -91,7 +91,7 @@
                             </p>
                             <p>
                                 <strong>1.3 About, Credits, Privacy pages</strong> <span class="ms-2">
-                                    <a href="/demo" target="_blank">
+                                    <a href="/about" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
                                             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
@@ -169,6 +169,51 @@
                                         </svg> Demo here </a>
                                 </span> This is probably the good place to show the KPI. Notice how each KPI is wrapped inside a card component.
                             </p>
+                            <p>
+                                <strong>4.2 List a resource</strong><span class="ms-2">
+                                    <a href="/admin/articles" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                        </svg> Demo here </a>
+                                </span> This is where you show a datatable that list any of your resource - actually a table of your database. There is no such thing as "datatable" in Bootstrap. You have to build it yourself, so this one is styled to show many complex value fields (like badge or date). You can also add filter and search functionalities, that are often expected for that kind of screen.
+                            </p>
+                            <p>
+                                <strong>4.3 Show a resource</strong><span class="ms-2">
+                                    <a href="/admin/articles/show?name=Shoes" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                        </svg> Demo here </a>
+                                </span> If you click on the "Show" button of the list, you will see this "Show" screen that actually display a resource. Typically, this is a record in the database. The admin dashboard helps to display it nicely to the end-user (which may not work in the computer science field).
+                            </p>
+                            <p>
+                                <strong>4.4 Create a resource</strong><span class="ms-2">
+                                    <a href="/admin/articles/new" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                        </svg> Demo here </a>
+                                </span> This screen will help the end-user to create a new resource in the database.
+                            </p>
+                            <p>
+                                <strong>4.5 Update a resource</strong><span class="ms-2">
+                                    <a href="/admin/articles/edit?name=Shoes" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                        </svg> Demo here </a>
+                                </span> This screen will help the end-user to update a new resource in the database. Typically, the fields are already filled. If you click on the "Cancel" button, you will see how a Toast could be displayed to explain that the action was cancelled. If you click on "Save", a different message will appear after redirection.
+                            </p>
+                            <p>
+                                <strong>4.5 Settings</strong><span class="ms-2">
+                                    <a href="/admin/settings" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                        </svg> Demo here </a>
+                                </span> It's always nice to have a section within the admin dashboard, dedicated to settings. It could be about anything related to developer task : empty a queue, reset sessions, and so on. But also on the businness side : enable or not some tracking, show banner (or not), and so on.
+                            </p>
                             <hr>
                             <p>
                                 <em>Last updated: Nov 14, 2021.</em> Updated section on intended uses.
@@ -193,7 +238,7 @@
                 <a class="text-muted fw-normal mb-2" rel="noopener" href="/changelog">What's new</a>
                 <a class="text-muted fw-normal mb-2" rel="noopener" href="/usecases">Use Cases</a>
                 <a class="text-muted fw-normal mb-2" rel="noopener" href="/demo">Take a tour</a>
-                <a class="text-muted fw-normal mb-2" rel="noopener" href="/">Go Back Home</a>
+                <a class="text-muted fw-normal mb-2" rel="noopener" href="https://github.com/bdavidxyz/bootiful/projects" target="_blank">GitHub project</a>
             </div>
             <div class="col-12 d-flex flex-column mb-5 col-lg">
                 <p class="mb-2 fw-bold">Product</p>
