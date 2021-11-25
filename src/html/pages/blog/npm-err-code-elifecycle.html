@@ -1,6 +1,7 @@
+{% set canonical_url = '/blog/npm-err-code-elifecycle' %}
 {% set page_name = 'npm err code elifecycle' %}
-{% set SEO_description = 'A free and open-source Bootstrap v5 template' %}
-{% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
+{% set SEO_description = 'npm ERR! code ELIFECYCLE - How to debug' %}
+{% set SEO_keywords = 'NPM, JavaScript, NodeJS' %}
 {% extends "layouts/site.html" %}
 
 {% import "macros/articleMacro.njk" as articleMacro %}
@@ -8,6 +9,7 @@
 {% block stylesheets %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
+
 {% block content %}
 <main class="article">
   <div class="container py-5">
@@ -19,10 +21,10 @@
           <h2>
             Some context
           </h2>
-          <p>Node.js allows developers use JavaScript to create new command line tools. NPM is a package manager for Node.js. It's the default one. It consists of a command line client, and an online database of public and private packages, called the "npm registry", and is available <a href="https://www.npmjs.com/">here</a>.</p>
+          <p>Node.js allows developers to use JavaScript to create new command line tools. NPM is a package manager for Node.js. It's the default one. It consists of a command line client, and an online database of public and private packages, called the "npm registry", and is available <a href="https://www.npmjs.com/">here</a>.</p>
 
           <p>
-            When you create an application developed on the Node.js platform, you can set up an error management system to take care of the problems encountered. The "ELIFECYCLE" error occurs when an unknown error caused the application to fail. Probably another software was running and conflicted with yours. When not, you have the  possibility to redo a clean installation of your application.
+            When you create an application developed on the Node.js platform, you can set up an error management system to take care of the problems encountered. The "ELIFECYCLE" error occurs when an unknown error causes the application to fail. Probably another software was running and conflicted with yours. When not, you have the  possibility to redo a clean installation of your application.
           </p>
 
           <h2>
@@ -53,7 +55,7 @@
 
           <h2>A word of caution</h2>
           <p>
-            With Unix, you use the "rm" command to remove files. It's a too simple command; you just type rm followed by a list of files. The main problem is : "rm" is too simple. It's far too easy to remove more than you initially wanted, and once something is gone, it is gone forever. There are a some hacks that make rm somehow more safe. To understand why it's impossible to reclaim deleted files, you need to know a bit about how the Unix filesystem works. 
+            With Unix, you use the "rm" command to remove files. It's a too simple command; you just type rm followed by a list of files. The main problem is : "rm" is too simple. It's far too easy to remove more than you initially wanted, and once something is gone, it is gone forever. There are some hacks that make rm somehow more safe. To understand why it's impossible to reclaim deleted files, you need to know a bit about how the Unix filesystem works. 
           </p>
 
           <h2>Credits</h2>
