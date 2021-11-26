@@ -57,7 +57,7 @@
             <figcaption class="figure-caption">Same screenshot as above (figcaption not part of the generated markdown alas).</figcaption>
           </figure>
           <p>
-            Visually no difference, but screen readers can read what is the image about, thanks to the "alt" attribute added.
+            Visually no difference, but screen readers can read what the image is about, thanks to the "alt" attribute added.
           </p>
           <h2>
             How to center the image with markdown
@@ -66,7 +66,7 @@
             You can't do this by <strong>only</strong> relying on Markdown syntax. Markdown doesn't care about positioning.
           </p>
           <p>
-            So you will have to use something else, and now the good news is that Mardown, in theory, supports plain HTML. In other words, HTML can be considered as Mardown language.
+            So you will have to use something else, and now the good news is that Markdown, in theory, supports plain HTML. In other words, HTML can be considered as Markdown language.
           </p>
           <p>
             Be aware that there is no guarantee the picture will actually be centered if the document isn't read through a browser (Visual Studio Web Essentials Markdown preview, Sublime Text Markdown preview, and so on).
@@ -112,6 +112,8 @@
           <p>
             You can also try to put the "align" attribute directly into the "img" tag.
           </p>
+
+
           <h2>Solution 3 : centering image using CSS where you have control over CSS styles</h2>
           <h3 class="h5 mt-4">3.1 Apply to all images</h3>
           <p>As long as CSS is not explicitly forbidden, you can try as follow :</p>
@@ -147,6 +149,15 @@ img[src*='#center'] {
               </code>
             </pre>            
           </p>
+
+          <h2>A few words about Markdown</h2>
+          <p>
+            For any markup that does not exist in the Markdown-defined syntax, you can just use HTML itself. There is no need to indicate or show that you’re switching from Markdown to HTML; you just use the usual tags. There is no order in which you can actually use the tag. You start either by Markdown, or HTML.
+          </p>
+          <p>
+            Note that Markdown formatting syntax will not be processed inside an HTML tag. For example, you can't use Markdown-style **bold** inside an HTML block.
+          </p>
+
           <h2>Credits</h2>
           <ul>
             <li>
