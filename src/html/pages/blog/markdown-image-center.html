@@ -1,0 +1,62 @@
+{% set canonical_url = '/blog/markdown-image-center' %}
+{% set page_name = 'markdown image center' %}
+{% set SEO_description = 'markdown image center - How to center an image in your markdown' %}
+{% set SEO_keywords = 'Markdown, image, Bootstrap, NPM, JavaScript, NodeJS' %}
+{% extends "layouts/site.html" %}
+
+{% import "macros/articleMacro.njk" as articleMacro %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+<main class="article">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col col-lg-8 mx-auto">
+        {{ articleMacro.article_header('Markdown, center the image', 'November 27, 2021', '4') }}
+        <div class="w-100">
+          <p>The goal of this article is to help you to center an image in your markdown file, for example when you use a README.md file at the root of your open-source project, that browser will actually display as HTML.</p>
+          <h2>
+            Bad news first
+          </h2>
+          <p>Markdown doesn't allow you to tweak alignment directly.</p>
+          <p>In fact, it would be against the Markdown principles to allow such formatting, as stated in the "Philosophy" section. (as stated here : <a href="https://daringfireball.net/projects/markdown/syntax#philosophy">https://daringfireball.net/projects/markdown/syntax#philosophy</a>)</p>
+
+          <h2>
+            How to center the image with markdown
+          </h2>
+          
+          <h2>Credits</h2>
+          <ul>
+            <li>
+              <a href="https://stackoverflow.com/a/49505612/2595513" target="_blank">https://stackoverflow.com/a/49505612/2595513</a>
+            </li>
+            <li>
+              <a href="https://docstore.mik.ua/orelly/unix3/upt/ch14_03.htm" target="_blank">https://docstore.mik.ua/orelly/unix3/upt/ch14_03.htm</a>
+            </li>
+            <li>
+              <a href="https://www.journaldunet.fr/web-tech/developpement/1441095-comment-corriger-l-erreur-npm-elifecycle-sous-node-js/" target="_blank">https://www.journaldunet.fr/web-tech/developpement/1441095-comment-corriger-l-erreur-npm-elifecycle-sous-node-js/</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-lg-8 mx-auto">
+        {% include "partials/end_of_article.html" %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  hljs.highlightAll();
+});
+</script>
+{% endblock %}
