@@ -6,27 +6,38 @@ A fully clickable demo is available here : [bootiful.org/demo](https://bootiful.
 
 ## Usage
 
-This project uses a simple gulp.js file. But your own project probably uses something more sophisticated, like Laravel, NextJS, or Ruby-on-Rails.
+There are 4 SCSS files, all under src/sass.
 
-So, first : use bootstrap v5 as you normally would in your project.
+Copy/paste them in your own project, then compile the SCSS with your own build.
 
-Then copy/paste the HTML, (S)CSS, and JS of this project into your own build.
+That's it, really.
 
-### SCSS
+## Production-ready website
 
-Copy the src/sass folder in your own project, then compile the SCSS with your own build.
+If you want to customise this template, you can use this repository directly.
 
-### HTML
+Tools :
 
-Either look at the HTML files under `src/*.html`, `src/partials/*.html`.
+- 🔥 [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/) - obviously :)
+- 🎨 Integrated with  [PurgeCSS](https://purgecss.com), remove unused CSS
+- ⚡ Lazy load images natively with loading="lazy" HTML attribute
+- ✨ Almost no image (apart from landing page)
+- 🎈 Syntax Highlighting with [highlightjs](https://highlightjs.org/)
+- 🛠 Build production with [Gulp](https://gulpjs.com/)
+- 💨 Live reload with "yarn dev" - gulp task under the hood
+- 🦊 Templating with [Nunjuck](https://mozilla.github.io/nunjucks/)
+- 🤖 SEO metadata and [Open Graph](https://ogp.me/) tags
+- 🗺 Sitemap.xml
+- ⚠️ 404 page
+- 💯 Maximize lighthouse score
+- 🌈 Include a FREE minimalist blog theme
+- 🗒 GitHub Actions (optional, by default deploy to gh-pages)
 
-Or go to the clickable demo and copy/paste html from there : [bootiful.org/demo](https://bootiful.org/demo)
+## Screenshots
 
-### JS
+Admin CRUD
+![CRUD](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637490594/bootstrap/admin_crudZ.png)
 
-This project tries to use the fewest possible JS. However there are certain situation where Bootstrap is unable to initialize some components : Toast messages are meant to be initialized by users, not the framework.
-
-In this case, the initialisation happens in the HTML files.
-
-
+Classic Pages
+![Classics](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637305365/bootstrap/pages.png)
 
