@@ -136,7 +136,7 @@ html {
     font-weight: 800;
   }
   h2 {
-    margin-top: 3rem;
+    margin-top: 4rem;
     margin-bottom: 1rem;
     font-weight: 800;
   }
@@ -155,6 +155,20 @@ html {
   img {
     box-shadow: 0 6px 40px 0 rgba(116,129,141,.14);
     max-width: 80%;
+  }
+
+  blockquote {
+    color: #69768e;
+    background-color: #f1f5fe;
+    border-color: #ebf2fe;
+    font-size: $font-size-base;
+  } 
+
+  blockquote {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
   }
 }
 
