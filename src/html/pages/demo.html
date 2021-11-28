@@ -1,91 +1,77 @@
 {% set page_name = 'Demo' %}
 {% set SEO_description = 'A free and open-source Bootstrap v5 template' %}
 {% set SEO_keywords = 'Bootstrap, SCSS, Gulp, JavaScript' %}
-
 {% import "macros/externalLinkMacro.njk" as externalLinkMacro %}
-
-
 {% extends "layouts/site.html" %}
-
 {% block content %}
-<div class="article">
-  <div class="container flex-center" style="min-height: 80vh;">
-    <div class="row flex-center py-5">
-      <div class="col col-lg-7 mx-auto">
-        <div class="my-5 text-center mx-auto" style="max-width: 500px;">
-          <h1 class="fw-800 pb-4">Demo</h1>
-        </div>
-        <div class="col mx-auto mb-5">
-          <p>The website you are currently viewing is actually the demo. However, this page has been created to make sure you won't miss any feature of Bootiful. </p>
-          <h2>1. Classic pages</h2>
-          
-          <p>
-            <strong>1.1 Landing page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/', 'Demo here')}}</span>  The landing page has currently 3 kind of sections : hero, featurettes, screenshots, testimonials, and CTA. The screenshots section is the only one where you will find images on the website. They are mandatory if you want to practically use the famous <a href="https://en.wikipedia.org/wiki/Show,_don%27t_tell" target="_blank">"show, don't tell"</a> .
-          </p>
-
-          <p>
-            <strong>1.2 Styleguide</strong> <span class="ms-2">{{externalLinkMacro.external_link('/styleguide', 'Demo here')}}</span>The styleguide could be seen as optionnal, since Boostrap does all the heavy lifting for you. However, Bootstrap itself is customised in this theme, even if we tried to stick as much as possible to the standard default. Therefore, it's always a good idea to see how standard components evolves when you decide to change one of the default SCSS values. Moreover, it greatly simplifies the work with the design team (if any). 
-          </p>
-
-          <p>
-            <strong>1.3 About, Credits, Privacy pages</strong> <span class="ms-2">{{externalLinkMacro.external_link('/about', 'Demo here')}}</span>In order to reduce the design work, the simple way to design a text-based page is to apply the same css as any blog article. You get a nice typography, vertical rythm, etc.
-          </p>
-
-          <p>
-            <strong>1.4 Footer</strong> {{externalLinkMacro.external_link('/#bottom', 'Classic footer')}} {{externalLinkMacro.external_link('/profile#bottom', 'Small footer')}} There are 2 footers on Bootiful, one for long-text content, the other for small screens like authentication. The classic footer is inspired directly from Bootstrap official examples. Remember that the footer is a lot more clicked than you could imagine, so that's a good place to put every useful link, and even newsletter subscribe form.
-          </p>
-
-          <h2>2. Authentication pages</h2>
-          <p>
-            <strong>1.2 Login page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/login', 'Demo here')}}</span> The login page has a complete different layout (no navigation header, and a smaller footer). It's also a good way to see how the Bootstrap form validation was designed. Left all fields empty (or empty them, because browsers tend to fill input with default values nowadays), then click the submit button. You will see how invalid fields are supposed to be shown with Bootstrap there is also a Toast that should be displayed
-          </p>
-
-          <p>
-            <strong>1.3 Signup page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/signup', 'Demo here')}}</span> Added values of your product are listed on the left, in order to help the user do something difficult : subscribe to another service. Of course the actual e-mail is never read for this demo, because it's only a front-end project. Integrate it to your own web framework to collect email from your users.
-          </p>
-
-          <h2>3. Profile page</h2>
-          <p>
-            Profile page is where the user after subscription.
-          </p>
-          <p>
-            <strong>3.1 Default profile page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/profile', 'Demo here')}}</span> The default profile page show an alternative navigation - classic page like privacy, terms, etc are less relevant since the user has already accepted terms and conditions after signup. Notice how each field is displayed inside a card. After submit, some Toast should probably be displayed, but this is not yet implemented.
-          </p>
-
-          <p>
-            <strong>3.2 Notification tab</strong> <span class="ms-2">{{externalLinkMacro.external_link('/profile/notification', 'Demo here')}}</span> The notification tab is a good way to show other inputs. Select/options, and checkboxes appears. You can add as much tabs and form control as you wish, of course.
-          </p>
-
-          <p>
-            <strong>3.3 Danger tab</strong> <span class="ms-2">{{externalLinkMacro.external_link('/profile/delete', 'Demo here')}}</span> The "Danger Zone" is a way to show how dangerous actions could be displayed. A simple, small red button is show here. Probably a "are you sure" modal should be shown after clicking the button, but this is not yet implemented.
-          </p>
-
-          <h2>4. Admin dashboard</h2>
-          <p>
-            <strong>4.1 Default page</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin', 'Demo here')}}</span> This is probably the good place to show the KPI. Notice how each KPI is wrapped inside a card component.
-          </p>
-          <p>
-            <strong>4.2 List a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles', 'Demo here')}}</span> This is where you show a datatable that list any of your resource - actually a table of your database. There is no such thing as "datatable" in Bootstrap. You have to build it yourself, so this one is styled to show many complex value fields (like badge or date). You can also add filter and search functionalities, that are often expected for that kind of screen.
-          </p>
-          <p>
-            <strong>4.3 Show a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles/show?name=Shoes', 'Demo here')}}</span> If you click on the "Show" button of the list, you will see this "Show" screen that actually display a resource. Typically, this is a record in the database. The admin dashboard helps to display it nicely to the end-user (which may not work in the computer science field).
-          </p>
-          <p>
-            <strong>4.4 Create a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles/new', 'Demo here')}}</span> This screen will help the end-user to create a new resource in the database.
-          </p>
-          <p>
-            <strong>4.5 Update a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles/edit?name=Shoes', 'Demo here')}}</span> This screen will help the end-user to update a new resource in the database. Typically, the fields are already filled. If you click on the "Cancel" button, you will see how a Toast could be displayed to explain that the action was cancelled. If you click on "Save", a different message will appear after redirection.
-          </p>
-          <p>
-            <strong>4.5 Settings</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/settings', 'Demo here')}}</span> It's always nice to have a section within the admin dashboard, dedicated to settings. It could be about anything related to developer task : empty a queue, reset sessions, and so on. But also on the businness side : enable or not some tracking, show banner (or not), and so on.
-          </p>
-        <hr>
-        <p>
-          <em>Last updated: Nov 14, 2021.</em>
-          Updated section on intended uses.
-        </p>
-
-        </div>
+  <div class="article">
+    <div class="container flex-center" style="min-height: 80vh;">
+      <div class="row flex-center py-5">
+        <div class="col col-lg-7 mx-auto">
+          <div class="my-5 text-center mx-auto" style="max-width: 500px;">
+            <h1 class="fw-800 pb-4">Demo</h1>
+          </div>
+          <div class="col mx-auto mb-5">
+            <p>The website you are currently viewing is actually the demo. However, this page has been created to make sure you won't miss any feature of Bootiful. </p>
+            <h2>1. Classic pages</h2>
+            
+            <p>
+              <strong>1.1 Landing page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/', 'Demo here')}}</span>  The landing page has currently 3 kind of sections : hero, featurettes, screenshots, testimonials, and CTA. The screenshots section is the only one where you will find images on the website. They are mandatory if you want to practically use the famous <a href="https://en.wikipedia.org/wiki/Show,_don%27t_tell" target="_blank">"show, don't tell"</a> .
+            </p>
+            <p>
+              <strong>1.2 Styleguide</strong> <span class="ms-2">{{externalLinkMacro.external_link('/styleguide', 'Demo here')}}</span>The styleguide could be seen as optionnal, since Boostrap does all the heavy lifting for you. However, Bootstrap itself is customised in this theme, even if we tried to stick as much as possible to the standard default. Therefore, it's always a good idea to see how standard components evolves when you decide to change one of the default SCSS values. Moreover, it greatly simplifies the work with the design team (if any).
+            </p>
+            <p>
+              <strong>1.3 About, Credits, Privacy pages</strong> <span class="ms-2">{{externalLinkMacro.external_link('/about', 'Demo here')}}</span>In order to reduce the design work, the simple way to design a text-based page is to apply the same css as any blog article. You get a nice typography, vertical rythm, etc.
+            </p>
+            <p>
+              <strong>1.4 Footer</strong> {{externalLinkMacro.external_link('/#bottom', 'Classic footer')}} {{externalLinkMacro.external_link('/profile#bottom', 'Small footer')}} There are 2 footers on Bootiful, one for long-text content, the other for small screens like authentication. The classic footer is inspired directly from Bootstrap official examples. Remember that the footer is a lot more clicked than you could imagine, so that's a good place to put every useful link, and even newsletter subscribe form.
+            </p>
+            <h2>2. Authentication pages</h2>
+            <p>
+              <strong>1.2 Login page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/login', 'Demo here')}}</span> The login page has a complete different layout (no navigation header, and a smaller footer). It's also a good way to see how the Bootstrap form validation was designed. Left all fields empty (or empty them, because browsers tend to fill input with default values nowadays), then click the submit button. You will see how invalid fields are supposed to be shown with Bootstrap there is also a Toast that should be displayed
+            </p>
+            <p>
+              <strong>1.3 Signup page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/signup', 'Demo here')}}</span> <span class="ms-2">{{externalLinkMacro.external_link('https://github.com/bdavidxyz/bootiful/blob/main/src/html/pages/signup.html', 'Source Code')}}</span> Added values of your product are listed on the left, in order to help the user do something difficult : subscribe to another service. Of course the actual e-mail is never read for this demo, because it's only a front-end project. Integrate it to your own web framework to collect email from your users.
+            </p>
+            <h2>3. Profile page</h2>
+            <p>
+              Profile page is where the user after subscription.
+            </p>
+            <p>
+              <strong>3.1 Default profile page</strong> <span class="ms-2">{{externalLinkMacro.external_link('/profile', 'Demo here')}}</span> The default profile page show an alternative navigation - classic page like privacy, terms, etc are less relevant since the user has already accepted terms and conditions after signup. Notice how each field is displayed inside a card. After submit, some Toast should probably be displayed, but this is not yet implemented.
+            </p>
+            <p>
+              <strong>3.2 Notification tab</strong> <span class="ms-2">{{externalLinkMacro.external_link('/profile/notification', 'Demo here')}}</span> The notification tab is a good way to show other inputs. Select/options, and checkboxes appears. You can add as much tabs and form control as you wish, of course.
+            </p>
+            <p>
+              <strong>3.3 Danger tab</strong> <span class="ms-2">{{externalLinkMacro.external_link('/profile/delete', 'Demo here')}}</span> The "Danger Zone" is a way to show how dangerous actions could be displayed. A simple, small red button is show here. Probably a "are you sure" modal should be shown after clicking the button, but this is not yet implemented.
+            </p>
+            <h2>4. Admin dashboard</h2>
+            <p>
+              <strong>4.1 Default page</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin', 'Demo here')}}</span> This is probably the good place to show the KPI. Notice how each KPI is wrapped inside a card component.
+            </p>
+            <p>
+              <strong>4.2 List a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles', 'Demo here')}}</span> This is where you show a datatable that list any of your resource - actually a table of your database. There is no such thing as "datatable" in Bootstrap. You have to build it yourself, so this one is styled to show many complex value fields (like badge or date). You can also add filter and search functionalities, that are often expected for that kind of screen.
+            </p>
+            <p>
+              <strong>4.3 Show a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles/show?name=Shoes', 'Demo here')}}</span> If you click on the "Show" button of the list, you will see this "Show" screen that actually display a resource. Typically, this is a record in the database. The admin dashboard helps to display it nicely to the end-user (which may not work in the computer science field).
+            </p>
+            <p>
+              <strong>4.4 Create a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles/new', 'Demo here')}}</span> This screen will help the end-user to create a new resource in the database.
+            </p>
+            <p>
+              <strong>4.5 Update a resource</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/articles/edit?name=Shoes', 'Demo here')}}</span> This screen will help the end-user to update a new resource in the database. Typically, the fields are already filled. If you click on the "Cancel" button, you will see how a Toast could be displayed to explain that the action was cancelled. If you click on "Save", a different message will appear after redirection.
+            </p>
+            <p>
+              <strong>4.5 Settings</strong><span class="ms-2">{{externalLinkMacro.external_link('/admin/settings', 'Demo here')}}</span> It's always nice to have a section within the admin dashboard, dedicated to settings. It could be about anything related to developer task : empty a queue, reset sessions, and so on. But also on the businness side : enable or not some tracking, show banner (or not), and so on.
+            </p>
+            <hr>
+            <p>
+              <em>Last updated: Nov 14, 2021.</em>
+              Updated section on intended uses.
+            </p>
+          </div>
         </div>
       </div>
     </div>
