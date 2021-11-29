@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjFweCIgaGVpZ2h0PSI1NXB4IiB2aWV3Qm94PSIwIDAgNjEgNTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8ZyBpZD0icnVieXNoYXBlMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxLjAwMDAwMCwgLTIzLjAwMDAwMCkiIGZpbGw9IiMxRTIwMjkiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwMDAwIj4KICAgICAgPHBvbHlnb24gaWQ9InJhaWxzbGlrZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuNTAwMDAwLCA1MS4wMDAwMDApIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC01MS41MDAwMDAsIC01MS4wMDAwMDApICIgcG9pbnRzPSI1MS41IDI0IDgxIDYxLjY4MzU3MzQgNjkuNzMyMDAyNyA3OCAzMy4yNjc5OTczIDc4IDIyIDYxLjY4MzU3MzQiPjwvcG9seWdvbj4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="canonical" href="https://bootiful.org/blog/npm-err-code-elifecycle" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-atom-dark.css" integrity="sha256-o2pW4nFwuNsw5S1LYviqZamlmOzGS2mClV4SUUaiBGE=" crossorigin="anonymous">
-    <title>Bootiful | npm err code elifecycle</title>
-    <meta name="keywords" content="NPM, JavaScript, NodeJS">
-    <meta name="description" content="npm ERR! code ELIFECYCLE - How to debug">
-    <meta name="og:title" content="Bootiful | npm err code elifecycle">
-    <meta name="og:description" content="npm ERR! code ELIFECYCLE - How to debug">
+    <link rel="canonical" href="https://bootiful.org/blog/markdown-image-center" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bootiful | markdown image center</title>
+    <meta name="keywords" content="Markdown, image, Bootstrap, NPM, JavaScript, NodeJS">
+    <meta name="description" content="markdown image center - How to center an image in your markdown">
+    <meta name="og:title" content="Bootiful | markdown image center">
+    <meta name="og:description" content="markdown image center - How to center an image in your markdown">
     <meta name="og:image" content="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637305365/bootstrap/pages.png">
-    <meta name="og:url" content="https://bootiful.org/blog/npm-err-code-elifecycle">
+    <meta name="og:url" content="https://bootiful.org/blog/markdown-image-center">
     <!-- Panelbear analytics -->
     <script async src="https://cdn.panelbear.com/analytics.js?site=9lOtKDiBkIQ"></script>
     <script>
@@ -70,49 +70,127 @@
                 <div class="row">
                     <div class="col col-lg-8 mx-auto">
                         <div class="mb-5 text-left">
-                            <h1 class="display-4 mb-3" style="word-break: break-word;">npm ERR! code ELIFECYCLE - how to debug</h1>
+                            <h1 class="display-4 mb-3" style="word-break: break-word;">Markdown, center the image</h1>
                             <div class="ml-1">
                                 <p class="m-0 text-sm">
-                                    <span>November 22, 2021</span>
+                                    <span>November 29, 2021</span>
                                     <span class="mx-1">·</span>
-                                    <span>3 min read</span>
+                                    <span>4 min read</span>
                                 </p>
                             </div>
                         </div>
                         <div class="w-100">
-                            <p>The goal of this article is to help you to debug the annoying "npm ERR! code ELIFECYCLE". You don't have time to know why this happens, and you want to correct it now ? That is the right place to do so. </p>
-                            <h2> Some context </h2>
-                            <p>Node.js allows developers to use JavaScript to create new command line tools. NPM is a package manager for Node.js. It's the default one. It consists of a command line client, and an online database of public and private packages, called the "npm registry", and is available <a href="https://www.npmjs.com/">here</a>.</p>
-                            <p> When you create an application developed on the Node.js platform, you can set up an error management system to take care of the problems encountered. The "ELIFECYCLE" error occurs when an unknown error causes the application to fail. Probably another software was running and conflicted with yours. When not, you have the possibility to redo a clean installation of your application. </p>
-                            <h2> npm ERR! code ELIFECYCLE </h2>
-                            <figure class="figure">
-                                <img width="600px" loading="lazy" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/e_shadow:25,r_40/v1637592412/bootstrap/npmerr.png" alt="showing error">
-                                <figcaption class="figure-caption">An annoying bug, indeed.</figcaption>
+                            <p>The goal of this article is to help you to center an image in your markdown file, for example when you use a README.md file at the root of your open-source project, that browser will actually display as HTML.</p>
+                            <h2> Bad news first </h2>
+                            <p>Markdown doesn't allow you to tweak alignment directly.</p>
+                            <p>In fact, it would be against the Markdown principles to allow such formatting, as stated in the "Philosophy" section.</p>
+                            <blockquote class="blockquote border-start ps-3 border-5" cite="https://daringfireball.net/projects/markdown/syntax#philosophy">
+                                <p>A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.</p>
+                                <figcaption> — John Gruber, <cite>The Daring Fireball Company LLC</cite></figcaption>
+                            </blockquote>
+                            <blockquote class="blockquote border-start ps-3 border-5" cite="https://daringfireball.net/projects/markdown/syntax#html">
+                                <p>Markdown is not a replacement for HTML, or even close to it. Its syntax is very small, corresponding only to a very small subset of HTML tags. The idea is not to create a syntax that makes it easier to insert HTML tags.</p>
+                                <figcaption> — John Gruber, <cite>The Daring Fireball Company LLC</cite></figcaption>
+                            </blockquote>
+                            <h2> Classic picture insertion thanks to markdown </h2>
+                            <p> This markdown code :
+                            <pre><code class="language-bash">![](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637503750/bootstrap/admin_crudZ3.png)</code></pre> Will produce the following output </p>
+                            <figure class="figure text-left">
+                                <img width="600px" loading="lazy" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637503750/bootstrap/admin_crudZ3.png">
+                                <figcaption class="figure-caption">Screenshot from Bootiful (figcaption not part of the generated markdown alas).</figcaption>
                             </figure>
-                            <p> The "ELIFECYCLE" error corresponds neither to a syntax error in the code nor to a permission problem because other sentences are then used to notify the error. This error reported that an unknown event caused the application to run normally. So you can check that another application is not using a resource that you need. This can be for example a port of the machine, or a component. You need to examine the log and see when the app has a problem. </p>
-                            <h2>How to debug</h2>
+                            <p> Whereas this markdown code :
+                            <pre><code class="language-bash">![A random screenshot](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637503750/bootstrap/admin_crudZ3.png)</code></pre> Will produce the following output </p>
+                            <figure class="figure text-left">
+                                <img width="600px" loading="lazy" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637503750/bootstrap/admin_crudZ3.png" alt="A random screenshot">
+                                <figcaption class="figure-caption">Same screenshot as above (figcaption not part of the generated markdown alas).</figcaption>
+                            </figure>
+                            <p> Visually no difference, but screen readers can read what the image is about, thanks to the "alt" attribute added. </p>
+                            <h2> How to center the image with markdown </h2>
+                            <p> You can't do this by <strong>only</strong> relying on Markdown syntax. Markdown doesn't care about positioning. </p>
+                            <p> So you will have to use something else, and now the good news is that Markdown, in theory, supports plain HTML. In other words, HTML can be considered as Markdown language. </p>
+                            <p> Be aware that there is no guarantee the picture will actually be centered if the document isn't read through a browser (Visual Studio Web Essentials Markdown preview, Sublime Text Markdown preview, and so on). </p>
                             <p>
-                                <strong>1 - clear the npm cache</strong> The problem could also be with the installation of your application which encountered an unknown problem. To solve this, it is possible to start again on a healthy basis by reinstalling all the modules used by the application, and by emptying the NPM node package manager cache. The "npm cache clean" command clears the npm cache. Add the "--force" argument to force the operation.
+                                <strong>Dependending on you environment, one of the following solution could work</strong>
                             </p>
-                            <pre><code class="language-bash">npm cache clean --force</code></pre>
-                            <p><strong>2 - delete node_modules</strong> just go to the root directory of your application and delete the "node_modules" folder. To remove the directory from the command line, the command depends on your operating system. The "rm" command is used with a Unix operating system. The arguments "r" and "f" indicate respectively to delete the subfolders and to force the deletion without asking for confirmation.</p> With Linux-based system:
-                            <pre><code class="language-bash">rm -rf node_modules</code></pre> With Windows-based system :
-                            <pre><code class="language-bash">rd /s /q "node_modules"</code></pre>
-                            <p><strong>3 - reinstall node_modules</strong> The "npm install" wil trigger a full download and installation of modules you need in your application. All you have to do then is to use the command "npm start" (check your package.json accordingly) to restart your application</p> With npm:
-                            <pre><code class="language-bash">npm install</code></pre> With yarn:
-                            <pre><code class="language-bash">yarn</code></pre>
-                            <h2>A word of caution</h2>
-                            <p> With Unix, you use the "rm" command to remove files. It's a too simple command; you just type rm followed by a list of files. The main problem is : "rm" is too simple. It's far too easy to remove more than you initially wanted, and once something is gone, it is gone forever. There are some hacks that make rm somehow more safe. To understand why it's impossible to reclaim deleted files, you need to know a bit about how the Unix filesystem works. </p>
+                            <h2>Solution 1 : HTML attributes with Markdown</h2>
+                            <p> You add extra brackets to the Markdown, and it will be transformed into attributes :
+                            <pre>
+              <code class="language-markdown">
+![Picture](Picture.svg){ width="800" height="600" style="display: block; margin: 0 auto" }
+              </code>
+            </pre>
+                            </p>
+                            <p> Could be rendered like this :
+                            <pre>
+              <code class="language-html">
+&lt;img src="Picture.svg" 
+        alt="Picture" 
+        width="800" 
+        height="600" 
+        style="display: block; margin: 0 auto" /&gt;
+              </code>
+            </pre>
+                            </p>
+                            <h2>Solution 2 : use the "align" deprecated attribute</h2>
+                            <p>This is not recommended, but in some cases this is the only way to center the image. Insert this HTML snippet into your markdown file.</p>
+                            <p>
+                            <pre>
+              <code class="language-html">
+&lt;p align="center"&gt;
+    &lt;img src="..."&gt;
+&lt;/p&gt;
+              </code>
+            </pre>
+                            </p>
+                            <p> You can also try to put the "align" attribute directly into the "img" tag. </p>
+                            <h2>Solution 3 : centering image using CSS where you have control over CSS styles</h2>
+                            <h3 class="h5 mt-4">3.1 Apply to all images</h3>
+                            <p>As long as CSS is not explicitly forbidden, you can try as follow :</p>
+                            <p>
+                            <pre>
+              <code class="language-css">
+img {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+              </code>
+            </pre>
+                            </p>
+                            <h3 class="h5 mt-4">3.2 Target specific image with URL hash</h3>
+                            <p>
+                            <pre>
+              <code class="language-markdown">
+![img](/img/any.jpg#center)
+              </code>
+            </pre>
+                            </p>
+                            <p>
+                            <pre>
+              <code class="language-css">
+img[src*='#center'] {
+    display: block;
+    margin: auto;
+}
+              </code>
+            </pre>
+                            </p>
+                            <h2>A few words about Markdown</h2>
+                            <p> For any markup that does not exist in the Markdown-defined syntax, you can just use HTML itself. There is no need to indicate or show that you’re switching from Markdown to HTML; you just use the usual tags. There is no order in which you can actually use the tag. You start either by Markdown, or HTML. </p>
+                            <p> Note that Markdown formatting syntax will not be processed inside an HTML tag. For example, you can't use Markdown-style **bold** inside an HTML block. </p>
                             <h2>Credits</h2>
                             <ul>
                                 <li>
-                                    <a href="https://stackoverflow.com/a/49505612/2595513" target="_blank">https://stackoverflow.com/a/49505612/2595513</a>
+                                    <a href="https://stackoverflow.com/a/12091563/2595513" target="_blank">https://stackoverflow.com/a/12091563/2595513</a>
                                 </li>
                                 <li>
-                                    <a href="https://docstore.mik.ua/orelly/unix3/upt/ch14_03.htm" target="_blank">https://docstore.mik.ua/orelly/unix3/upt/ch14_03.htm</a>
+                                    <a href="https://stackoverflow.com/a/62383408/2595513" target="_blank">https://stackoverflow.com/a/62383408/2595513</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.journaldunet.fr/web-tech/developpement/1441095-comment-corriger-l-erreur-npm-elifecycle-sous-node-js/" target="_blank">https://www.journaldunet.fr/web-tech/developpement/1441095-comment-corriger-l-erreur-npm-elifecycle-sous-node-js/</a>
+                                    <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">https://daringfireball.net/projects/markdown/syntax</a>
                                 </li>
                             </ul>
                         </div>
@@ -201,8 +279,12 @@
         </div>
     </footer>
     <script src="/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            hljs.highlightAll();
+        });
+    </script>
 </body>
 
 </html>
