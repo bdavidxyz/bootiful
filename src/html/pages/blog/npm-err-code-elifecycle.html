@@ -7,7 +7,8 @@
 {% import "macros/articleMacro.njk" as articleMacro %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-atom-dark.css" integrity="sha256-o2pW4nFwuNsw5S1LYviqZamlmOzGS2mClV4SUUaiBGE=" crossorigin="anonymous">
+
 {% endblock %}
 
 {% block content %}
@@ -86,10 +87,6 @@
 </main>
 {% endblock %}
 {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function(event) {
-  hljs.highlightAll();
-});
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
 {% endblock %}

@@ -36,7 +36,7 @@ Tools :
 ## Screenshots
 
 Admin CRUD
-![CRUD](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637490594/bootstrap/admin_crudZ.png)
+![CRUD](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637490594/bootstrap/admin_crudZ3.png)
 
 Classic Pages
 ![Classics](https://res.cloudinary.com/bdavidxyz-com/image/upload/v1637305365/bootstrap/pages.png)
