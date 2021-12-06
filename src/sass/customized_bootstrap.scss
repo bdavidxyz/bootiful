@@ -130,38 +130,7 @@ html {
     margin-bottom: 1rem;
     border: 1px solid transparent;
   }
-  img {
-    border-bottom-color: #e5e7eb;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-end-end-radius: 6px;
-    border-end-start-radius: 6px;
-    border-left-color: #e5e7eb;
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: #e5e7eb;
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-start-end-radius: 6px;
-    border-start-start-radius: 6px;
-    border-top-color: #e5e7eb;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-top-style: solid;
-    border-top-width: 1px;
-    box-shadow: 0 15px 50px -20px #e0e7ff,0 -5px 50px -20px #fce7f3;
-    box-sizing: border-box;
-    display: block;
-    margin-top: 2rem;
-  }
-  figcaption {
-    font-size: 16px;
-    color: $gray-500;
-    font-style: italic;
-    margin-bottom: 1rem;
-  }
+
 }
 
 .profile {
@@ -195,6 +164,41 @@ html {
       }
   }
 
+}
+
+.article {
+    img {
+    border-bottom-color: #e5e7eb;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-end-end-radius: 6px;
+    border-end-start-radius: 6px;
+    border-left-color: #e5e7eb;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #e5e7eb;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-start-end-radius: 6px;
+    border-start-start-radius: 6px;
+    border-top-color: #e5e7eb;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: 0 15px 50px -20px #e0e7ff,0 -5px 50px -20px #fce7f3;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 2rem;
+  }
+  figcaption {
+    font-size: 16px;
+    color: $gray-500;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
 }
 
 // Possible improvement for articles : 
