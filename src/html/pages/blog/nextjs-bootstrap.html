@@ -1,0 +1,405 @@
+{% set canonical_url = '/blog/nextjs-bootstrap' %}
+{% set page_name = 'NextJS Bootstrap' %}
+{% set SEO_description = 'NextJS and Bootstrap 5 : an in-depth tutorial' %}
+{% set SEO_keywords = 'Bootstrap, NextJS, SCSS' %}
+{% extends "layouts/site.html" %}
+
+{% import "macros/articleMacro.njk" as articleMacro %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/rainbow.min.css" integrity="sha512-ohxc5OnaYpC+nn8t5pH3F9Fx4xjwE7bnFDN7qX3GWWIK70+ivPEYQejZQOV96YmurTP5IaqmxyFnXDIEHg7Vhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+
+{% block content %}
+<main class="article">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col col-lg-8 mx-auto">
+        {{ articleMacro.article_header('NextJS, Bootstrap 5 : an in-depth tutorial', 'December 6, 2021', '8') }}
+        <div class="w-100">
+
+<p>Today we&#39;ll see how to install, customize, and use dynamic component of Bootstrap 5 with NextJS.</p>
+<p>First, let&#39;s see how to use Bootstrap 5 with NextJS, without using any 3rd party library (other than Bootstrap itself, of course). At the end of the article, we will see other way to do it.</p>
+<h2 id="prerequisite-node-yarn">Prerequisite : node, yarn</h2>
+<p>For this tutorial, NodeJS is required, and you can use yarn or npm as you wish, but yarn will be used here.</p>
+<pre><code class="lang-bash">$&gt; <span class="hljs-keyword">node</span> <span class="hljs-title">--version</span>
+v14.<span class="hljs-number">15.1</span>
+$&gt; yarn --<span class="hljs-keyword">version</span>
+<span class="hljs-number">1.22</span>.<span class="hljs-number">10</span>
+</code></pre>
+<p>It should not be a problem if you have slightly different versions.</p>
+<h2 id="create-a-fresh-new-nextjs-app">Create a fresh new NextJS app</h2>
+<p>Some kind of magic now : the creation of a default NextJS app is embedded into the yarn executable</p>
+<pre><code class="lang-bash"><span class="hljs-variable">$&gt;</span> yarn create <span class="hljs-keyword">next</span>-app <span class="hljs-keyword">next</span>-raw-bootstrap
+</code></pre>
+<p>Press Enter, a new app is magically building files, directory, and first few dependencies for you.</p>
+<p>Notice that <code>next-raw-bootstrap</code> is the name of your new app - I used &quot;raw&quot; here to emphasize that we will use Bootstrap only.</p>
+<p>Now go to the &quot;next-raw-bootstrap&quot; directory and open your favorite code editor at the root of &quot;next-raw-bootstrap&quot;. </p>
+<pre><code class="lang-bash"><span class="hljs-variable">$&gt;</span> cd <span class="hljs-keyword">next</span>-raw-bootstrap
+</code></pre>
+<p>You can have a look to the directory structure and the created files, particularly package.json : very few dependencies, but already everything needed to lint and hot-reload code locally. Nice !</p>
+<pre><code class="lang-bash">$/<span class="hljs-keyword">next</span>-raw-bootstrap&gt; yarn dev
+yarn <span class="hljs-keyword">run</span> v1<span class="hljs-number">.22</span><span class="hljs-number">.10</span>
+$ <span class="hljs-keyword">next</span> dev
+**ready** - started server <span class="hljs-keyword">on</span> http:<span class="hljs-comment">//localhost:3000</span>
+</code></pre>
+<p>Now open the browser at the indicated URL (here <a href="http://localhost:3000">http://localhost:3000</a>)</p>
+<p><figure>
+  <img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638391044/bootstrap/next2Z.png" loading="lazy" alt="NextJS default web page">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">NextJS default web page</figcaption>
+
+<p>NextJS default website should now appear in your browser. There is a few CSS styles, and a default index page (what you can see by default is under <code>pages/index.js</code>)</p>
+<h2 id="bootstrap-5-html-a-not-too-easy-sample">Bootstrap 5 HTML : a not too easy sample</h2>
+<p>Now go to <code>pages/index.js</code>, delete all existing content, and replace by this one :</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">'next/head'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Home</span>(<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Next and Bootstrap<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"A demo about NextJS and Bootstrap 5"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Head</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"toast align-items-center text-white bg-primary border-0 position-absolute top-50"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"assertive"</span> <span class="hljs-attr">aria-atomic</span>=<span class="hljs-string">"true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"d-flex"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"toast-body"</span>&gt;</span>
+            Hello, world! This is a toast message.
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"btn-close btn-close-white me-2 m-auto"</span> <span class="hljs-attr">data-bs-dismiss</span>=<span class="hljs-string">"toast"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Close"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"collapse"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"navbarToggleExternalContent"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bg-dark p-4"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">h5</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"text-white h4"</span>&gt;</span>Collapsed content<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"text-muted"</span>&gt;</span>Toggleable via the navbar brand.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar navbar-dark bg-dark"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"container-fluid"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar-toggler"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-bs-toggle</span>=<span class="hljs-string">"collapse"</span> <span class="hljs-attr">data-bs-target</span>=<span class="hljs-string">"#navbarToggleExternalContent"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"navbarToggleExternalContent"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Toggle navigation"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar-toggler-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"py-5 text-center container"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"row py-lg-5"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"col-lg-6 col-md-8 mx-auto"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"fw-light"</span>&gt;</span>Bootstrap 5.1.3 example<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"lead text-muted"</span>&gt;</span>Short text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  )
+}</span>
+</code></pre>
+<p>The example is quite simple, but also complex enough to show how dynamic component should work.</p>
+<p>Here is what you should see in the browser :</p>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:40%" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638375256/bootstrap/next1.png" loading="lazy" alt="Unstyled bootstrap content">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:40%">Unstyled bootstrap content</figcaption>
+
+
+
+<h2 id="add-sass-to-allow-bootstrap-customisation">Add SaSS to allow Bootstrap customisation</h2>
+<p>CSS alone might not be enough for a production-ready project. SaSS allow to define variables, functions, and a bunch of features above CSS to allow you a long-term, maintainable CSS design system.</p>
+<p>And good news : Bootstrap source files are based on SaSS.</p>
+<p>Stop the local server. And type :</p>
+<pre><code class="lang-bash"><span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-raw-bootstrap&gt; yarn add -D sass<span class="hljs-variable">@1</span>.<span class="hljs-number">43.5</span>
+</code></pre>
+<p><strong>Side note</strong> The &quot;-D&quot; option here means that sass will be used in development mode only. Some dependencies are needed only during development time, like linting, other only on build time, like building CSS with SaSS. All dependencies that will <strong>not</strong> end up in the browser can be safely put inside the development section of your package.json file.</p>
+<h2 id="get-bootstrap-and-nextjs-working-together-styling-only-">Get Bootstrap and NextJS working together (styling only)</h2>
+<p>Now that SaSS is installed, let&#39;s install bootstrap and it&#39;s required JS dependency PopperJS :</p>
+<pre><code class="lang-bash"><span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-raw-bootstrap&gt; yarn add <span class="hljs-variable">@popperjs</span>/core<span class="hljs-variable">@2</span>.<span class="hljs-number">11.0</span>
+<span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-raw-bootstrap&gt; yarn add bootstrap<span class="hljs-variable">@5</span>.<span class="hljs-number">1.3</span>
+</code></pre>
+<p>Now check your package.json file</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"next-raw-bootstrap"</span>,
+  <span class="hljs-attr">"private"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"dev"</span>: <span class="hljs-string">"next dev"</span>,
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"next build"</span>,
+    <span class="hljs-attr">"start"</span>: <span class="hljs-string">"next start"</span>,
+    <span class="hljs-attr">"lint"</span>: <span class="hljs-string">"next lint"</span>
+  },
+  <span class="hljs-attr">"dependencies"</span>: {
+    <span class="hljs-attr">"@popperjs/core"</span>: <span class="hljs-string">"2.11.0"</span>,
+    <span class="hljs-attr">"bootstrap"</span>: <span class="hljs-string">"5.1.3"</span>,
+    <span class="hljs-attr">"next"</span>: <span class="hljs-string">"12.0.4"</span>,
+    <span class="hljs-attr">"react"</span>: <span class="hljs-string">"17.0.2"</span>,
+    <span class="hljs-attr">"react-dom"</span>: <span class="hljs-string">"17.0.2"</span>
+  },
+  <span class="hljs-attr">"devDependencies"</span>: {
+    <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"7"</span>,
+    <span class="hljs-attr">"eslint-config-next"</span>: <span class="hljs-string">"12.0.4"</span>,
+    <span class="hljs-attr">"sass"</span>: <span class="hljs-string">"1.43.5"</span>
+  }
+}
+</code></pre>
+<p>You should now see &quot;popper&quot; and &quot;bootstrap&quot; inside the dependencies, and &quot;sass&quot; inside the devDependencies.</p>
+<p>Now add an application.scss file (scss in the extension for SaSS files) here : styles/application.scss</p>
+<pre><code class="lang-bash"><span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-raw-bootstrap&gt; touch styles/applications.scss
+</code></pre>
+<p>And import Bootstrap as follow</p>
+<pre><code class="lang-scss"><span class="hljs-comment">// inside styles/application.scss</span>
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'bootstrap/scss/bootstrap.scss'</span>;
+</code></pre>
+<p>And import this application.scss into your _app (you can safely remove other styles) :</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// inside pages/_app.js</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'../styles/application.scss'</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyApp</span>(<span class="hljs-params">{ Component, pageProps }</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Component</span> {<span class="hljs-attr">...pageProps</span>} /&gt;</span>
+}
+
+export default MyApp</span>
+</code></pre>
+<p>Relaunch your local server :</p>
+<pre><code class="lang-bash"><span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-raw-bootstrap&gt; yarn dev
+</code></pre>
+<p>and open your browser at localhost:3000</p>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%" src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638375256/bootstrap/next7.png" loading="lazy" alt="Bootstrap, style only">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">Bootstrap, style only</figcaption>
+
+<p>Ok ! The application uses now Bootstrap 5 to style the application, but </p>
+<ul>
+<li>The navigation button (hamburger menu) does not work</li>
+<li>The Toast is not showing (as if it&#39;s in the HTML). Bootstrap do not display Toast messages by default, you have to trigger it manually. (see <a href="https://getbootstrap.com/docs/5.1/components/toasts/">https://getbootstrap.com/docs/5.1/components/toasts/</a>)</li>
+</ul>
+<h2 id="javascript-of-bootstrap-within-nextjs">JavaScript of Bootstrap within NextJS</h2>
+<p>Contrary to Tailwind, Bootstrap is not only a CSS framework and a design system. It comes also with a bunch of dynamic components like collapsible navigation bar (also called &quot;navbar&quot;), toasts messages, and so on. CSS is not really able to bring this &quot;dynamic&quot; part. But this is precisely why Bootstrap sometimes needs JavaScript to get <em>every feature</em> working properly. </p>
+<p>Some component like the collapsible navbar doesn&#39;t need anything else but loading the whole bootstrap JS library.</p>
+<p>Let&#39;s change the top part of pages/index.js (returned HTML stay the same)</p>
+<pre><code class="lang-js"><span class="hljs-comment">// pages/index.js, returned HTML is unchanged</span>
+<span class="hljs-keyword">import</span> React, { useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">'next/head'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Home</span>(<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-comment">// See https://en.reactjs.org/docs/hooks-effect.html</span>
+  useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+
+      <span class="hljs-comment">// Run code on client-side only : ensure document is here</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">document</span> !== <span class="hljs-literal">undefined</span>) {
+
+        <span class="hljs-comment">// load JS bootstrap dependency</span>
+        <span class="hljs-built_in">require</span>(<span class="hljs-string">'bootstrap/dist/js/bootstrap'</span>)   
+
+      }
+  <span class="hljs-comment">// Run useEffect only once</span>
+  <span class="hljs-comment">// Read https://css-tricks.com/run-useeffect-only-once/</span>
+  }, [])
+
+  <span class="hljs-keyword">return</span> (
+    <span class="hljs-comment">// same HTML as before</span>
+  )
+</code></pre>
+<p>We use here a hook (callback inside useEffect) to modify the DOM once it has properly loaded. We check that the document exists (which means that we are working client-side, inside the browser, and not server side), and once all conditions are met, the  Bootstrap&#39;s JS lib is loaded from node_modules.</p>
+<p>Reload the page in your browser.</p>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%"  src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638375256/bootstrap/next8.png" loading="lazy" alt="Bootstrap, collapsible navbar">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">Bootstrap, collapsible navbar</figcaption>
+
+
+<p>Great ! If you click on the hamburger menu, you will now see that the component works properly.</p>
+<p>But... the toast message is still not displayed.</p>
+<h2 id="bootstrap-javascript-based-initialization-within-nextjs">Bootstrap JavaScript-based initialization within NextJS</h2>
+<p>So we have now some of the Bootstrap JavaScript components that works. The ones that doesn&#39;t require any special initialization. However, some components like toast messages (<a href="https://getbootstrap.com/docs/5.1/components/toasts/">https://getbootstrap.com/docs/5.1/components/toasts/</a>) need to be manually triggered. Let&#39;s see how.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// pages/index.js, returned HTML is unchanged</span>
+<span class="hljs-keyword">import</span> React, { useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">'next/head'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Home</span>(<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-comment">// See https://en.reactjs.org/docs/hooks-effect.html</span>
+  useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+
+      <span class="hljs-comment">// Run code on client-side only : ensure document is here</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">document</span> !== <span class="hljs-literal">undefined</span>) {
+
+        <span class="hljs-comment">// load JS bootstrap dependency</span>
+        <span class="hljs-keyword">let</span> bootstrap = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bootstrap/dist/js/bootstrap'</span>)
+
+        <span class="hljs-comment">// find all toasts</span>
+        <span class="hljs-keyword">let</span> toastElList = [].slice.call(<span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.toast'</span>))
+        <span class="hljs-keyword">let</span> toastList = toastElList.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">toastEl</span>) </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> bootstrap.Toast(toastEl)
+        })
+
+        <span class="hljs-comment">// show each toast explicitly</span>
+        toastList.forEach( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, index</span>) </span>{
+          element.show()
+        })
+      }
+  <span class="hljs-comment">// Run useEffect only once</span>
+  <span class="hljs-comment">// Read https://css-tricks.com/run-useeffect-only-once/</span>
+  }, [])
+
+  <span class="hljs-keyword">return</span> (
+    <span class="hljs-comment">// same HTML as before</span>
+  )
+</code></pre>
+<p>Let&#39;s check your local server is running, if not run</p>
+<pre><code class="lang-bash"><span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-raw-bootstrap&gt; yarn dev
+</code></pre>
+<p>And reload your browser :</p>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%"  src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638382731/bootstrap/next9.png" loading="lazy" alt="Bootstrap, toast message">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">Bootstrap, toast message</figcaption>
+
+
+
+<p>Ta-da ! Now the Toast message is displayed. </p>
+<h2 id="customize-bootstrap-style-for-a-nextjs-app">Customize Bootstrap style for a NextJS app</h2>
+<p>Ok, now both CSS and JS work for Bootstrap inside a NextJS app, let&#39;s see how to customize Bootstrap, in order to maintain a coherent </p>
+<pre><code class="lang-scss"><span class="hljs-comment">// inside styles/application.scss</span>
+<span class="hljs-variable">$lead-font-size</span>: <span class="hljs-number">5rem</span>;
+<span class="hljs-variable">$lead-font-weight</span>: <span class="hljs-number">800</span>;
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'bootstrap/scss/bootstrap.scss'</span>;
+</code></pre>
+<p>Let&#39;s see how the app is displayed now :</p>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%"  src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638375257/bootstrap/next3.png" loading="lazy" alt="Bootstrap, bold message">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">Bootstrap, custom lead font</figcaption>
+
+
+<p>As you can see, Bootstrap &quot;.lead&quot; class has been changed, just by changing SaSS variables. In Bootstrap 5 there are a lot of variables. All the variable you can set are available here :</p>
+<p><a href="https://github.com/twbs/bootstrap/blob/v5.1.3/scss/_variables.scss">https://github.com/twbs/bootstrap/blob/v5.1.3/scss/_variables.scss</a></p>
+<h2 id="show-me-the-code-please">Show me the code, please</h2>
+<p>Final code source for this first part can be seen here : <a href="https://github.com/bdavidxyz/next-raw-bootstrap">https://github.com/bdavidxyz/next-raw-bootstrap</a></p>
+<h2 id="restart-from-scratch-with-bootstrap-5-components">Restart from scratch, with Bootstrap 5 components</h2>
+<p>Why would you restart from scratch ? Let&#39;s admit it : use Bootstrap 5 &quot;as is&quot; inside a NextJS is not very elegant. Because ReactJS is about <em>components</em>. Wouldn&#39;t it be nice if the Bootstrap components were already wrapped somewhere into React components ? </p>
+<p>Good news : it has already been made here :
+<a href="https://github.com/react-bootstrap/react-bootstrap">https://github.com/react-bootstrap/react-bootstrap</a></p>
+<p><strong>Side note</strong> There are two similar projects : react-bootstrap and reactstrap. They slightly differ in the way components are coded, but are very similar when you use them. So pick your favorite. I personally find react-bootstrap more complete, so for this tutorial we will use react-bootstrap.</p>
+<h2 id="-re-create-a-fresh-new-nextjs-app">(Re)create a fresh new NextJS app</h2>
+<pre><code class="lang-js"><span class="hljs-variable">$&gt;</span> yarn create <span class="hljs-keyword">next</span>-app <span class="hljs-keyword">next</span>-bootstrap
+<span class="hljs-variable">$&gt;</span> cd <span class="hljs-keyword">next</span>-bootstrap
+<span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-bootstrap&gt; yarn add -D sass<span class="hljs-variable">@1</span>.<span class="hljs-number">43.5</span>
+<span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-bootstrap&gt; yarn add <span class="hljs-variable">@popperjs</span>/core<span class="hljs-variable">@2</span>.<span class="hljs-number">11.0</span>
+<span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-bootstrap&gt; yarn add  bootstrap<span class="hljs-variable">@5</span>.<span class="hljs-number">1.3</span>
+<span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-bootstrap&gt; echo <span class="hljs-string">"@import 'bootstrap/scss/bootstrap.scss';"</span> &gt; styles/application.scss
+</code></pre>
+<p>Then make sure that pages/_app is importing application.scss  :</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// pages/_app.js</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'../styles/application.scss'</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyApp</span>(<span class="hljs-params">{ Component, pageProps }</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Component</span> {<span class="hljs-attr">...pageProps</span>} /&gt;</span>
+}
+
+export default MyApp</span>
+</code></pre>
+<p>So far, nothing new.</p>
+<p>One last thing : modify pages/index.js as follow : </p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> Head <span class="hljs-keyword">from</span> <span class="hljs-string">'next/head'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Home</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>NextJS app with react-bootstrap<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Head</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+          Welcome
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  )
+}
+</code></pre>
+<p>Run your local server with <code>yarn dev</code> and let&#39;s see how the default page is styled :</p>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%"  src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638375256/bootstrap/next5.png" loading="lazy" alt="Bootstrap, simple message">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">Bootstrap, simple message</figcaption>
+
+
+<p>Ok ! Now it&#39;s type to see the magic of React components</p>
+<h2 id="react-based-bootstrap-components-thanks-to-react-bootstrap">React-based Bootstrap components thanks to react-bootstrap</h2>
+<pre><code class="lang-js"><span class="hljs-variable">$/</span><span class="hljs-keyword">next</span>-bootstrap&gt; yarn add  react-bootstrap<span class="hljs-variable">@2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">3</span>
+</code></pre>
+<p>And change <code>pages/index.js</code> as follow :</p>
+<pre><code class="lang-jsx">import Head from 'next/head'
+import {Accordion} from 'react-bootstrap'
+
+export default function Home() {
+  return (
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>NextJS app with react-bootstrap<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Head</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+          Welcome
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">Accordion</span> <span class="hljs-attr">defaultActiveKey</span>=<span class="hljs-string">"0"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Accordion.Item</span> <span class="hljs-attr">eventKey</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Accordion.Header</span>&gt;</span>Accordion Item #1<span class="hljs-tag">&lt;/<span class="hljs-name">Accordion.Header</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Accordion.Body</span>&gt;</span>
+              Lorem ipsum dolor sit amet...
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Accordion.Body</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Accordion.Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Accordion.Item</span> <span class="hljs-attr">eventKey</span>=<span class="hljs-string">"1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Accordion.Header</span>&gt;</span>Accordion Item #2<span class="hljs-tag">&lt;/<span class="hljs-name">Accordion.Header</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Accordion.Body</span>&gt;</span>
+              Duis aute irure dolor in reprehenderit in voluptate...
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Accordion.Body</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Accordion.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Accordion</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  )
+}
+</code></pre>
+<p><figure>
+<img style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%"  src="https://res.cloudinary.com/bdavidxyz-com/image/upload/v1638375256/bootstrap/next6.png" loading="lazy" alt="Bootstrap, accordion component">
+</figure></p>
+<figcaption style="display:block;float:none;margin-left:auto;margin-right:auto;width:60%">Bootstrap, accordion component</figcaption>
+
+
+<p>click on the accordion to see how the UX flows...</p>
+<p>Nice ! Instead of manually pull the JS Bootstrap lib inside a useEffect hook, we simply imported here the component, this is a lot more intuitive.</p>
+<h2 id="code-for-this-last-example">Code for this last example</h2>
+<p><a href="https://github.com/bdavidxyz/next-bootstrap">https://github.com/bdavidxyz/next-bootstrap</a></p>
+<h2 id="credits">Credits</h2>
+<p>NextJS documentation : <a href="https://nextjs.org/docs">https://nextjs.org/docs</a></p>
+<p>Bootstrap documentation : <a href="https://getbootstrap.com/docs/5.1/">https://getbootstrap.com/docs/5.1/</a></p>
+<p>React-Bootstrap repository : <a href="https://github.com/react-bootstrap/react-bootstrap">https://github.com/react-bootstrap/react-bootstrap</a></p>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js" integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  hljs.highlightAll();
+});
+</script>{% endblock %}
