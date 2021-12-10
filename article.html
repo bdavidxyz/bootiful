@@ -1,0 +1,161 @@
+<article>
+  <h1 style="
+    margin-top: 0;
+">Fantastic HTML editor, markdown under the hood
+  </h1><small>Posted December 20, 2021 by <a class="stretched-link position-relative" href="https://adidoks.netlify.com/authors/public/">Public</a>&nbsp;‐&nbsp;**3&nbsp;min read**</small><br>
+  <br>
+  <span style="font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">This article offers a sample of basic Markdown syntax that can be used in Bootrails, also it shows whether basic HTML elements are decorated with CSS.</span>
+</article>
+<h4 id="blockquote-with-attribution">Blockquote with attribution
+</h4>
+<blockquote>Don't communicate by sharing memory, share memory by communicating.
+  —<cite>Rob Pike<sup class="footnote-reference"><a href="#1">1</a></sup></cite>
+</blockquote>
+<article>
+  <h2 id="headings">Headings
+  </h2>The following HTML <code>
+    <h1></h1>
+  </code>—<code>
+    <h6></h6>
+  </code> elements represent six levels of section
+  headings. <code>
+    <h1></h1>
+  </code> is the highest section level while <code>
+    <h6></h6>
+  </code> is the lowest.
+  <h1 id="h1">H1
+  </h1>
+  <h2 id="h2">H2
+  </h2>
+  <h3 id="h3">H3
+  </h3>
+  <h4 id="h4">H4
+  </h4>
+  <h5 id="h5">H5
+  </h5>
+  <h6 id="h6">H6
+  </h6>
+  <h2 id="paragraph">Paragraph
+  </h2>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
+  voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
+  dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
+  cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
+  porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
+  Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit
+  ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda
+  veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore
+  eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata
+  tiustia prat.
+  Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne
+  sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+  <h2 id="blockquotes">Blockquotes
+  </h2>The blockquote element represents content that is quoted from another source,
+  optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element,
+  and optionally with in-line changes such as annotations and abbreviations.
+  <h4 id="blockquote-without-attribution">Blockquote without attribution
+  </h4>
+  <blockquote>Tiam, ad mint andaepu dandae nostion secatur sequo quae. **Note** that you can use *Markdown syntax* within a blockquote.
+  </blockquote>
+  <blockquote>All men by nature desire to know.
+    ―<cite>Aristotle<sup class="footnote-reference"><a href="#2">2</a></sup></cite><br>
+    <br>
+  </blockquote>
+  <h2 id="tables">Tables
+  </h2>Tables aren't part of the core Markdown spec, but Zola supports them
+  out-of-the-box.
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bob</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>Alice</td>
+        <td>23</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="inline-markdown-within-tables">Inline Markdown within tables
+  </h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Italics</th>
+        <th>Bold</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>*italics*</td>
+        <td>**bold**</td>
+        <td><code>code</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="code-blocks">Code Blocks
+  </h2>
+  <h4 id="code-block-with-backticks">Code block with backticks
+  </h4><code style="background-color:#2b303b;" data-te-codeblock="">
+    <meta charset="utf-8">
+    <title>Example HTML5 Document</title>
+    <p>Test</p>
+  </code>
+  <h4 id="code-block-indented-with-four-spaces">Code block indented with four spaces
+  </h4><code style="background-color:#2b303b;" data-te-codeblock="">
+    <meta charset="utf-8">
+    <title>Example HTML5 Document</title>
+    <p>Test</p>
+  </code>
+  <h2 id="list-types">List Types
+  </h2>
+  <h4 id="ordered-list">Ordered List
+  </h4>
+  <ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ol>
+  <h4 id="unordered-list">Unordered List
+  </h4>
+  <ul>
+    <li>List item</li>
+    <li>Another item</li>
+    <li>And another item</li>
+  </ul>
+  <h4 id="nested-list">Nested list
+  </h4>
+  <ul>
+    <li>Fruit<ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+      </ul>
+    </li>
+    <li>Dairy<ul>
+        <li>Milk</li>
+        <li>Cheese</li>
+      </ul>
+    </li>
+  </ul>
+  <h2 id="other-elements-abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark
+  </h2><abbr title="Graphics Interchange Format">GIF</abbr>is a bitmap image format.
+  H<sub>2</sub>O
+  X<sup>n</sup>+ Y<sup>n</sup>= Z<sup>n</sup><br>
+  <br>
+  Press<kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd>to end the
+  session.
+  Most salamanders are nocturnal, and hunt for insects, worms, and
+  other small creatures.
+  - - -
+  <sup class="footnote-definition-label">1</sup>
+  The above quote is excerpted from Rob Pike's <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk</a> during Gopherfest, November 18, 2015.
+  <sup class="footnote-definition-label">2</sup>
+  The quote is the first sentence of Aristotle's <a href="http://classics.mit.edu/Aristotle/metaphysics.html">Metaphysics</a>.
+</article>
