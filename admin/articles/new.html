@@ -7,6 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjFweCIgaGVpZ2h0PSI1NXB4IiB2aWV3Qm94PSIwIDAgNjEgNTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8ZyBpZD0icnVieXNoYXBlMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxLjAwMDAwMCwgLTIzLjAwMDAwMCkiIGZpbGw9IiMxRTIwMjkiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSIjMDAwMDAwIj4KICAgICAgPHBvbHlnb24gaWQ9InJhaWxzbGlrZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuNTAwMDAwLCA1MS4wMDAwMDApIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC01MS41MDAwMDAsIC01MS4wMDAwMDApICIgcG9pbnRzPSI1MS41IDI0IDgxIDYxLjY4MzU3MzQgNjkuNzMyMDAyNyA3OCAzMy4yNjc5OTczIDc4IDIyIDYxLjY4MzU3MzQiPjwvcG9seWdvbj4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor.css">
+    </link>
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor-contents.css">
+    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.css">
+    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    </link>
     <title>Bootiful | Admin | Articles</title>
     <meta name="keywords" content="Bootstrap, SCSS, Gulp, JavaScript">
     <meta name="description" content="A free and open-source Bootstrap v5 template">
@@ -151,7 +159,7 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-12 col-lg-5 justify-content-start align-items-start mb-lg-2">
-                        <h3 class="mb-2 mb-lg-0 fw-bold truncate">Create new article</h3>
+                        <h3 class="mb-2 mb-lg-0 fw-bold truncate">Create new blog article</h3>
                     </div>
                     <div class="col-12 col-lg-auto flex-1 ms-auto justify-content-center align-items-end mb-lg-2">
                         <div class="d-flex flex-row w-100 h-100 justify-content-start justify-content-lg-end align-items-center flex-wrap">
@@ -221,93 +229,28 @@
                 <div class="card p-3 p-lg-4 flex-column justify-content-center align-items-between">
                     <form method="get" action="/admin/articles?success=true">
                         <fieldset>
-                            <legend class="h6 fw-600 mb-3">General</legend>
                             <div class="row ">
                                 <div class="col-12">
                                     <div id="div_id_name" class="mb-3">
-                                        <label for="id_name" class="form-label requiredField"> Article name<span class="asteriskField ms-1">*</span>
+                                        <label for="id_name" class="form-label requiredField d-block my-0" style="font-size: 1rem; font-weight: 600;"> Title<span class="ms-1 text-danger">*</span>
                                         </label>
+                                        <small id="hint_id_name" class="form-text text-muted d-block my-0 mn">This field will be shown on the tab title,</small>
+                                        <small id="hint_id_name" class="form-text text-muted d-block my-0">and will appear in search result title.</small>
                                         <input type="text" name="name" maxlength="256" class="textinput textInput form-control" required="" id="id_name" value="">
-                                        <small id="hint_id_name" class="form-text text-muted">To help you recognize it later</small>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <div id="div_id_enabled" class="mb-3">
-                                            <input type="checkbox" name="enabled" class="checkboxinput form-check-input" id="id_enabled" checked="">
-                                            <label for="id_enabled" class="form-check-label"> Viewable </label>
-                                            <small id="hint_id_enabled" class="form-text text-muted">Uncheck to hide if from suppliers</small>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset>
-                            <legend class="h6 fw-600 mb-3 mt-4">Quality panel</legend>
+                            <label for="id_description" class="form-label d-block m-0"> Content </label>
+                            <small id="hint_id_description" class="form-text text-muted my-3">Enter markdown, HTML, or plain text.</small>
                             <div class="row ">
                                 <div class="col-12">
-                                    <div id="div_id_query" class="mb-3">
-                                        <label for="id_query" class="form-label requiredField"> Delivery<span class="asteriskField ms-1">*</span>
-                                        </label>
-                                        <select name="query" class="select form-select" id="id_query">
-                                            <option value="empty"></option>
-                                            <option value="visitors_sum">Success</option>
-                                            <option value="views_sum">Warning</option>
-                                            <option value="page_load_avg">Default</option>
-                                            <option value="page_load_p50">Danger</option>
-                                            <option value="page_load_p95">None</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row ">
-                                <div class="col-auto col-md-4">
-                                    <div id="div_id_operator" class="mb-3">
-                                        <label for="id_operator" class="form-label requiredField"> Trigger alert when anything is<span class="asteriskField ms-1">*</span>
-                                        </label>
-                                        <select name="operator" class="select form-select" id="id_operator">
-                                            <option value="empty"></option>
-                                            <option value="gt">Above</option>
-                                            <option value="gte">Above or equal to</option>
-                                            <option value="lt">Below</option>
-                                            <option value="lte">Below or equal to</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-auto col-md-4">
-                                    <div id="div_id_threshold" class="mb-3">
-                                        <label for="id_threshold" class="form-label requiredField"> Threshold<span class="asteriskField ms-1">*</span>
-                                        </label>
-                                        <input type="number" name="threshold" class="numberinput form-control" required="" value="" id="id_threshold">
-                                    </div>
-                                </div>
-                                <div class="col-auto col-md-4">
-                                    <div id="div_id_period" class="mb-3">
-                                        <label for="id_period" class="form-label requiredField"> Unit<span class="asteriskField ms-1">*</span>
-                                        </label>
-                                        <select name="period" class="select form-select" id="id_period">
-                                            <option value="Minutes">Minutes</option>
-                                            <option value="Degree" selected="">Degree</option>
-                                            <option value="Angle">Angle</option>
-                                            <option value="Centimeters">Centimeters</option>
-                                        </select>
-                                    </div>
+                                    <div id="editorSection"></div>
                                 </div>
                             </div>
                         </fieldset>
-                        <fieldset>
-                            <legend class="h6 fw-600 mb-3 mt-4">Description</legend>
-                            <div class="row ">
-                                <div class="col-12">
-                                    <div id="div_id_description" class="mb-3">
-                                        <label for="id_description" class="form-label"> Enter a text for the manager </label>
-                                        <textarea name="description" class="form-select"></textarea>
-                                        <small id="hint_id_description" class="form-text text-muted">In case of a new article, manager will be notified immediately.</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="buttonHolder justify-content-between">
+                        <div class="mt-4 justify-content-between">
                             <div>
                                 <input type="button" name="cancel" value="Cancel" class="btn btn bg-white btn-sm" id="button-id-cancel" onclick="window.location.href='/admin/articles?cancelled=true'">
                                 <input type="submit" name="submit" value="Save" class="btn btn-primary btn btn-dark btn-sm" id="submit-id-submit">
@@ -319,6 +262,15 @@
         </div>
     </div>
     <script src="/js/all.js"></script>
+    <script src="https://uicdn.toast.com/tui-editor/latest/tui-editor-Editor-full.js"></script>
+    <script>
+        new tui.Editor({
+            el: document.querySelector('#editorSection'),
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            height: '300px'
+        });
+    </script>
 </body>
 
 </html>
