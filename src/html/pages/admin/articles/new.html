@@ -4,15 +4,17 @@
 {% extends "layouts/admin.html" %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor.css"></link>
-<link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor-contents.css"></link>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.css"></link>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"></link>
+
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css">
+
 {% endblock %}
 {% block scripts %}
-<script src="https://uicdn.toast.com/tui-editor/latest/tui-editor-Editor-full.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+
 <script>
-  new tui.Editor({
+  const Editor = toastui.Editor;
+  new Editor({
   el: document.querySelector('#editorSection'),
   initialEditType: 'markdown',
   previewStyle: 'vertical',
