@@ -1,4 +1,4 @@
-# Contributing to Spina
+# Contributing to Bootiful
 
 First of all, you're awesome! Thanks for taking the time to contribute to `Bootiful`.
 
